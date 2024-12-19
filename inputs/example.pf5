@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Node>
+  <Drive Brand="1" Family="9" Config="196" MajorRev="7" MinorRev="1">
+    <Parameters>
+      <Parameter Instance="33">24</Parameter>
+      <Parameter Instance="34">12</Parameter>
+      <Parameter Instance="35">14</Parameter>
+      <Parameter Instance="36">514</Parameter>
+      <Parameter Instance="37">50</Parameter>
+      <Parameter Instance="39">4</Parameter>
+      <Parameter Instance="41">100</Parameter>
+      <Parameter Instance="42">100</Parameter>
+      <Parameter Instance="44">7500</Parameter>
+      <Parameter Instance="486">12</Parameter>
+      <Parameter Instance="487">1000</Parameter>
+      <Parameter Instance="488">24</Parameter>
+      <Parameter Instance="489">300</Parameter>
+      <Parameter Instance="501">852</Parameter>
+      <Parameter Instance="502">56</Parameter>
+      <Parameter Instance="503">86</Parameter>
+      <Parameter Instance="504">396</Parameter>
+      <Parameter Instance="517">100</Parameter>
+      <Parameter Instance="518">0</Parameter>
+      <Parameter Instance="527">500</Parameter>
+      <Parameter Instance="528">500</Parameter>
+      <Parameter Instance="530">10</Parameter>
+      <Parameter Instance="531">80</Parameter>
+      <Parameter Instance="532">400</Parameter>
+      <Parameter Instance="580">100</Parameter>
+      <Parameter Instance="583">50</Parameter>
+      <Parameter Instance="584">500</Parameter>
+      <Parameter Instance="585">80</Parameter>
+      <Parameter Instance="586">10</Parameter>
+      <Parameter Instance="587">1900</Parameter>
+      <Parameter Instance="588">1900</Parameter>
+    </Parameters>
+  </Drive>
+</Node>

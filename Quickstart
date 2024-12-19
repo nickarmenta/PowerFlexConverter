@@ -1,0 +1,1 @@
+venv/bin/python -m streamlit run streamlit_app.py --server.runOnSave true --server.port 8080 --logger.level debug

@@ -1,0 +1,2343 @@
+3 Parameters
+
+This chapter explains the function setting for use of this product.
+Always read the instructions before use.
+The following marks are used to indicate the controls. (Parameters without any mark are valid for all the controls.)
+
+Mark Control method Applied motor
+VIF control
+Magneticjfiux] Advanced magnetic flux vector control
+Three-phase induction motor
+Sensorless Real sensorless vector control
+Vector control
+PM sensorless vector control PM motor
+
+3.1 Parameter initial value groups
+
++ Initial values of parameters of the FR-E800 differ depending on the parameter initial value group. In this Instruction Manual,
+Gr.1 indicates the parameter initial value group 1, and Gr.2 indicates the parameter initial value group 2.
+¢ FR-E800 inverters are divided into two groups as shown in the following table.
+
+Parameter initial value groups Model Specification
+FR-E800-1 RS-485 communication, terminal FM
+Group 1 (Gr.1) FR-E800-5 RS-485 communication, terminal AM
+FR-E800-(SC)EPA Ethernet communication (Protocol group A)
+Group 2 (Gr.2) FR-E800-4 RS-485 communication, terminal AM
+FR-E800-(SC)EPB Ethernet communication (Protocol group B)}
+¢ The initial values of the following parameters differ depending on the parameter initial value group.
+Pr. Name Initial value Refer to
+Gr.1 Gr.2 page
+3 Base frequency 60 Hz 50 Hz 428
+4 Multi-speed setting (high speed) 60 Hz 50 Hz 234
+19 Base frequency voltage 9999 8888 428
+20 Acceleration/deceleration reference frequency 60 Hz 50 Hz 196
+55 Frequency monitoring reference 60 Hz 50 Hz 270
+66 Stall prevention operation reduction starting frequency 60 Hz 50 Hz 256
+125 Terminal 2 frequency setting gain frequency 60 Hz 50 Hz 318
+126 Terminal 4 frequency setting gain frequency 60 Hz 50 Hz 318
+249 Earth (ground) fault detection at start 0 1 246
+301 BCD input gain 60 Hz 50 Hz 4
+303 BIN input gain 60 Hz 50 Hz 4
+505 Speed setting reference 60 Hz 50 Hz 268
+808 Speed limit 60 Hz 50 Hz 147
+1486 Load characteristics maximum frequency 60 Hz 50 Hz 261
+
+*1 The parameter is available when the plug-in option (FR-A8AX) is installed. For details, refer to the FR-A8AX E kit Instruction Manual.
+
+52 3. Parameters
+3.1 Parameter initial value groups
+3.2 Parameter list (by parameter number)
+
+For simple variable-speed operation of the inverter, the initial values of the parameters may be used as they are. Set the
+necessary parameters to meet the load and operational specifications. Parameter's setting, change and check can be made
+on the operation panel.
+
+eo NOTE
+
+. Gimple) indicates simple mode parameters. Use Pr.160 User group read selection to indicate the simple mode parameters
+only (initial setting is to indicate the extended mode parameters).
+
+¢ The changing of the parameter settings may be restricted in some operating statuses. Use Pr.77 Parameter write selection
+to change the setting of the restriction.
+
++ Refer to page 465 for instruction codes for communication and availability of parameter copy, Parameter clear, and all clear.
+
+Notation
+
+[E800]: Available for the standard model.
+
+[E800-1]: Available for the FM type inverter (standard model).
+
+[E800-4]: Available for the AM (50 Hz) type inverter (standard model).
+
+[E800-5]: Available for the AM (60 Hz) type inverter (standard model).
+
+[E800-(SC)E]: Available for the Ethernet model and the safety communication model.
+
+[E800-SCE]: Available for the safety communication model.
+
+[E800-(SC)EPA]: Available for the Protocol group A (Ethernet model / safety communication model).
+[E800-(SC)EPB]: Available for the Protocol group B (Ethernet model / safety communication model).
+[200/400 V class]: Available for the 200/400 V class inverters.
+
+[575 V class]: Available for the 575 V class inverters.
+
+[3-phase]: Available for the three-phase power input model.
+
+@ Pr.0 to Pr.99
+Minimum Initial
+Function Pr. re Name Setting range setting value’ peer elie
+group increments | Gr.1 | Gr.2 bee $
+6% 2
+5%?
+0 G000 Torque boost(Simple) 0% to 30% 0.1% 4%°2 426
+3% 2
+2%"?
+H400 Maximum frequencyGimple) | 0 to 120 Hz 0.01 Hz 120 Hz 253
+2 H401 Minimum frequencyGimple) | 0 to 120 Hz 0.01 Hz 0Hz 253
+3 G001 Base frequency(Simple) 0 to 590 Hz 0.01 Hz 60 Hz | 50 Hz | 428
+s 4 p3o1 | Multhspeed setting (high 9 15 590 H 0.01Hz | 60Hz|50Hz| 234
+2 speed)Gimplie) ° 2 . 2 2 2
+@ |s p02 _| Multi speed setting (middle | | 00H 0.01Hz | 30H 234
+F speedy Simple) essere a“ ;
+6 p3o3_(| Multrspeed setting (low | 0 5, 590 H 0.01 H 10H 234
+speed)Gimple) ° 2 woe 2
+“3
+7 F010 Acceleration timeGimple) 0 to 3600 s 0.18 = 196
+s
+“3
+8 F011 Deceleration timeGimpia) 0 to 3600 s 01s - 196
+8
+Electronic thermal O/L 238,
+9 H000 | relayGimple) 0t0 500A 0.01 Inverter rated | 445’
+C103 current
+Rated motor currentGimple) 355
+
+3. Parameters 53
+3.2 Parameter list (by parameter number)
+Initial
+
+selection
+
+Function Pr. rr Name Setting range setting value’ per Customer
+group increments | Gr.1 | Gr.2 ee b
+g |10 — |etoo | PC injection brake operation | 4 1, 499 Hz 0.01Hz |3Hz 434
+= requency
+5 — 7
+= (tt 101 _ | PC injection brake operation | 9 +, 19. ggag 0.18 05s 434
+x) time
+3 sctect ; 6%"
+£ 42 G110 DC injection brake operation 0% to 30% 0.1% 4% 434
+) voltage
+1%°4
+. 207,
+_— 13 F102 Starting frequency 0 to 60 Hz 0.01 Hz 0.5 Hz 208
+_ 14 G003 Load pattern selection Oto3 1 0 430
+5 15 D200 Jog frequency 0 to 590 Hz 0.01 Hz 5 Hz 232
+s
+3s |16 Foo2 | 409 acceleration! 0 to 3600 s 01s 05s 232
+ro) leceleration time
+[e)
+=”
+_ 47 T720 MRS/X10 terminal input O05 1 0 332
+selection
+— {1B H4o2 | High speed maximum 0 to 590 Hz 0.01Hz |120Hz 253
+frequency
+— irs G002 _| Base frequency voltage oose 000 V, 8888, loiy ge99 | ssas | 428
+£ |20 Fooo | Acceleration/deceleration | 4 +, 599 Hz 0.01Hz | 60Hz| 50 Hz| 196
+= reference frequency
+8
+z
+2
+a
+i
+3 P| F001 Acceleration/deceleration 0,1 1 0 196
+x} time increments
+e
+2
+<
+& |22 H500 | Stall prevention operation | po, +, 4ng% 0.1% 150% 14,
+= level (Torque limit level) 256
+o
+3 Stall prevention operation
+= 23 H610 level compensation factor at | 0% to 200%, 9999 0.1% 9999 256
+Ss double speed
+a
+a
+£
+=|
+3
+a] D304 to | Multi-speed setting (speed 4
+3 24 to 27 D307 to speed 7) 0 to 590 Hz, 9999 0.01 Hz 9999 234
+Z
+5
+=
+_ 29 F100 Acceleration/deceleration Oto2 1 0 201
+pattern selection
+_ 30 E300 Regenerative function Oto2 1 0 442
+selection
+a 31 H420 Frequency jump 1A 0 to 590 Hz, 9999 0.01 Hz 9999 254
+A 32 H421 Frequency jump 1B 0 to 590 Hz, 9999 0.01 Hz 9999 254
+> 33 H422 Frequency jump 2A 0 to 590 Hz, 9999 0.01 Hz 9999 254
+g 34 H423 Frequency jump 2B 0 to 580 Hz, 9999 0.01 Hz 9999 254
+2 35 H424 Frequency jump 3A 0 to 590 Hz, 9999 0.01 Hz 9999 254
+a 36 H425 Frequency jump 3B 0 to 590 Hz, 9999 0.01 Hz 9999 254
+— 37 M000 Speed display 0.01 to 9998 0.001 1800 268
+_ 40 E202 RUN key rotation direction 0.4 1 0 170
+
+54 3. Parameters
+3.2 Parameter list (by parameter number)
+
+Pr. Clann dt Refer | Customer
+Function Pr. rou Name Setting range setting value’ (onesD settin
+group increments | Gr.1 | Gr.2 Pee E
+5 41 M441 Up-to-frequency sensitivity | 0% to 100% 0.1% 10% 301
+3 42 M442 Output frequency detection | 0 to 590 Hz 0.01 Hz 8 Hz 301
+a
+3
+Z
+iy .
+& |43 M443 _| Output frequency detection | 1, con H1z,9909 —|0.01Hz ‘| 9999 301
+5 for reverse rotation
+i-a
+2
+L
+. “3
+44 F020 Second acceleration/ Oto 3600s 04s 5s 196,
+deceleration time 1083 396
+§ |45  |F021 |Second deceleration time | 0to3600s,9999 «(| 0.1s 9999 see
+S
+= 46 G010_ —_| Second torque boost 0% to 30%, 9999 0.1% 9999 426
+2
+2 47 G011 Second V/F (base frequency) | 0 to 590 Hz, 9999 0.01 Hz 9999 428
+3 48 Heog | Second stall prevention 0% to 400%, 9999 | 0.1% 9999 256
+a operation level
+Ho10 Second electronic thermal O/ 238,
+51 €203 Lrelay 0 to 500 A, 9999 0.01A 9999 345,
+Rated second motor current 355
+[E800][E800-
+(SC)EPB]
+0, 5 to 14, 17 to 20, 23
+to 25, 32, 33, 35, 38,
+40 to 42, 44, 45, 50 to
+Operation panel main 57, 61, 62, 67, 91, 97,
+52 M100 monitor selection 100 1 Q 270
+[E800-(SC)EPA]
+0, 5 to 14, 17 to 20, 23
+a to 25, 32, 33, 35, 38,
+= 40 to 42, 44, 45, 50 to
+2 57, 61, 62, 67, 83, 91,
+g 97, 100
+53 moo3 |Frequency/rotationspesd |, 4 4 4 0 268
+unit switchover
+. . 1 to 3, 5 to 14, 17, 18,
+54 M300 selection E800 21, 24, 32, 33, 50,52, | 4 1 279
+53, 61, 62, 67, 70, 97
+557 |Mo49__| Frequency monitoring 0 to 590 Hz 0.01Hz | 60 Hz| 50 Hz| 279
+reference
+567 |M041 | Current monttoring reference | 0 to 500 A 0.01A inverter rated | 579
+t . . 403,
+g 57 A702 Restart coasting time 0, 0.1 to 30 s, 9999 0.18 9999 408
+a
+£
+2
+g 58 A703 Restart cushion time Oto 60s 0.18 1s 403
+2
+<
+— 59 F101 Remote function selection 0 to 3, 11 to 13 1 0 203
+_ 60 G030 Energy saving control 0.9 1 0 432
+selection ‘
+c
+£ 61 F510 Reference current 0 to 500 A, 9999 001A 9999 209
+£
+2
+8 |62 F511 _ | Reference value at 0% to 400%, 9999 «| 1% 9999 209
+8 acceleration
+e
+2
+&
+2
+8
+& |63 F512 _ | Reference value at 0% to 400%, 9999 | 1% 9999 209
+o deceleration
+&
+&
+S
+3
+<
+
+3. Parameters 5 5
+
+3.2 Parameter list (by parameter number)
+Pr. (lta: pull Refer | Customer
+Function Pr. Name Setting range setting value a
+group increments | Gr | Gr2 topage| setting
+— 65 H300 Retry selection Oto5 1 0 250
+— |6s He11 —_| Stall prevention operation | 9 t, 590 Hz 0.01Hz | 60Hz| 50 Hz| 256
+reduction starting frequency
+67 H301 | Number of retriesatfault = fy i,49,401t0110 | 4 0 250
+2 occurrence
+é 68 H302 Retry waiting time 0.1 to 600 s 01s 1s 250
+69 H303 Retry count display erase 0 1 0 250
+— |70 G107 ee regenerative brake | 0, 15 190% 0.1% 0% 442
+[200/400 V class]
+0, 3, 5, 6, 10, 13, 15,
+16, 20, 23, 30, 33, 40,
+43, 50, 53, 70, 73, 340,
+_ 71 c100 Applied motor B093, 3090, eee 1 0 ae
+[575 V class]
+0, 3, 5, 6, 10, 13, 15,
+16, 30, 33, 8090, 8093,
+9090, 9093
+_— 72 E600 PWM frequency selection Oto 15 1 1 184
+_ 73 ToOoo Analog Input selection 0, 1,6, 10, 11, 16 1 1 310
+_ 74 TO02 Input filter time constant Oto 8 1 1 316
+[E800(-E)]
+Reset selection/ Ot03, 14 to 17 [E800(-E)]
+_ disconnected PU detection’ _ | !=800-SCE] 14
+PU stop selection 0 to 3, 14 to 17, 10000 [E800-SCE]
+to 10003, 10014 to 10014
+10017
+— 75 E100 Reset selection 4 0 161
+E101 Disconnected PU detection | 0, 1
+E102 PU stop selection 1
+[E800(-E)]
+E107 Reset limit 0, 10 [E800-SCE] TE800-SCE]
+10
+_— 77 E400 Parameter write selection Oto2 1 0 173
+_ 78 D020 Reverse rotation prevention Oto2 1 0 231
+selection
+= 79 pooo Operation mode 0to 4, 6,7 1 tt) 212,
+selectionGimple) ™ 222
+
+56 3. Parameters
+
+3.2 Parameter list (by parameter number)
+
+Pr. Clann dt Refer | Customer
+Function Pr. rou Name Setting range setting value’ to oa 0 settin
+group increments | Gr.1 | Gr.2 Pee &
+97,
+80 C101 Motor capacity 0.1 to 30 kw, 9999 0.01 kw 9999 345,
+355
+97,
+81 C102 Number of motor poles 2, 4, 6, 8, 10, 12, 9999 | 1 9999 345,
+355
+82 C125 Motor excitation current 0 to 500 A, 9999 0.01A 9999 345
+[200 V class]
+200 V 97
+83 104 _| Rated motor voltage Oto 1000 V 0.1V panned class] | 345,
+[575 V class] | 2°
+575V
+z 97,
+| 84 C105 Rated motor frequency 10 to 400 Hz, 9999 0.01 Hz 9999 345,
+4 355
+3 Speed control gain
+g 89 G932 (Advanced magnetic flux 0% to 200%, 9999 0.1% 9999 102
+3 vector)
+345,
+90 C120 Motor constant (R1) 0 to 50 Q, 9999 0.0010 9999 355,
+410
+91 C121 Motor constant (R2) 0 to 50 Q, 9999 0.0010 9999 345
+Motor constant (L1)/d-axls 345,
+92 C122 inductance (Ld) 0 to 6000 mH, 9999 0.1 mH 9999 355
+Motor constant (L2)/q-axis 345,
+93 C123 inductance (Lq) 0 to 6000 mH, 9999 0.1 mH 9999 355
+94 C124 Motor constant (X) 0% to 100%, 9999 0.1% 9999 345
+95 C111 Online auto tuning selection | 0, 1 1 0 362
+345,
+96 C110 Auto tuning setting/status 0,1, 11 1 0 355,
+410
+@ Pr.100 to Pr.199
+Minimum Initial
+Function Pr. re Name Setting range setting value’ peer eile
+pha increments | Gr.1 | Gr.2 | "99 &
+117 No20 PU communication station Oto 31 1 0 *g
+number
+48, 96, 192, 384, 576, *
++ ag , 96, 192, 384, 1 8
+118 NO021 PU communication speed 768, 1152 1 192
+PU communication stop bit
+5 ~ length / data length 9, 1, 10, 11 1
+8 119 No22 PU communication data 0,1 1 0 +g
+5 length
+5 NO23 ie communication stop bit 0,1 {
+$ length
+5 120 No24 PU communication parity 0to2 1 2 *B
+3 check
+2 ——
+e 121 No25 PU communication retry 0 to 10, 9999 1 { *B
+8 count
+5 ——
+@ |122 |Noze |PUcommunication check | 4 4 4 to 999.8 5, 9999 | 0.15 0 8
+time interval
+123 |No27 | PU communication waiting | 94,150 ms, 9999 | 1 ms 9999 8
+time setting
+124 No28 PU communication CRILF Oto2 1 { "8
+selection
+125 | To22_| Terminal 2 frequency setting | 0 a0 0.01Hz | 60Hz|50Hz| 318
+— gain frequency Gimple) 2 . 2 2 2
+126 | To42__| Terminal 4 frequency setting | 0 1 a0 i 0.01Hz | 60Hz|50Hz| 318
+— gain frequencyGimple) 2 win 2 2
+
+3. Parameters 57
+
+3.2 Parameter list (by parameter number)
+Pr. (latina Initial Refer | Customer
+Function Pr. rou Name Setting range setting value to oa 0 " ettin
+group increments | Gr.1 | Gr.2 ae &
+127 |a612_| PID control automatic Oto 590Hz,9999 —*|0.01Hz | 9999 380
+switchover frequency
+0, 20, 21, 40 to 43, 50,
+; ; 51,60, 61, 1000, 1001, 380,
+128 A610 PID action selection 1010, 1011, 2000, 1 0 396
+2001, 2010, 2011
+¢ |129 | A613 | PID proportional band 0.1% to 1000%, 9999 | 0.1% 400% see
+E liso ; ; 380,
+Fy A614 PID integral time 0.1 to 3600 s, 9999 0.1s 1s 396
+ce)
+a a 380,
+2/431 =| A601 ‘| PID upper limit 0% to 100%, 9999 | 0.1% 9999 508
+432 |A602 —_| PID lower limit 0% to 100%, 9999 | 0.1% gg9g eg
+133 |A611__| PID action set point 0% to 100%, 9999 | 0.01% 9999 eg
+134 | A615_| PID differential time 0.01t010s,9999 | 0.01s 999g eg
+2 145 E103 PU display language 0to7 1 _ 164
+selection
+— |147 |Fo22 | Accelerationideceleration =| 4, san z,9999 = |o.01Hz —it 9999 196
+time switching frequency
+& 450 |mago | OCutputcurrantdetection — | oy, +, 4g0% 0.1% 150% 304
+= level
+oa
+% 451 /mag1 | Outputcurrentdetection =| 0) 4, 495 O18 Os 304
+J signal delay time
+5 152 M462 Zero current detection level | 0% to 400% 0.1% 5% 304
+i=
+3 153 M463 | Zero current detection time |0to 10s 0.01s 0.5s 304
+Voltage reduction selection
+_— 154 H631 during stall prevention 1,11 1 1 256
+operation
+— |456 |H501 | Stall prevention operation — | 4, 34, 400, 101 1 Q 256
+selection
+_ 157 M430 OL signal output timer 0 to 25 s, 9999 0.1s Os one
+1 to 3, 510 14, 17, 18,
+AM terminal function 21, 24, 32, 33, 50, 52
+— {158 | M301 | election [E800-4][E800-5] | to 54, 61, 62, 67, 70, | ' 1 279
+91, 97
+160 | Eago (| User Group read 0, 1, 9999 1 0 181
+— selectionGimple uo
+161 |E200 —_ | Frequency setting/key lock | 4 4 49 44 1 Q 167
+operation selection
+r Automatic restart after 403,
+2 162 A700 instantaneous power failure | 0, 1, 10, 11 1 0 408,
+2 selection 410
+i*}
+o , .
+E |465 | a7to | Stall prevention operation | oo, +, 400% 0.1% 150% 403
+= level for restart
+2
+& 466 |mag3 | Outputcurrentdetection | 5 1, 195, gog9 O18 O18 304
+3 signal retention time
+oa
+3
+2 467 M464 Output current detection 0,1, 10, 11 1 0 304
+£ operation selection
+é
+E
+= |188  FEnao
+E001 Parameter for manufacturer setting. Do not set.
+— {189 E081
+
+58 3. Parameters
+3.2 Parameter list (by parameter number)
+
+Pr. Client dt Refer | Customer
+Function Pr. rou Name Setting range setting value’ (onesD settin
+group increments | Gr.1 | Gr.2 Pee b
+5 170 M020 Watt-hour meter clear 0, 10, 9999 1 9999 270
+e
+.]
+£
+$
+3 171 M030 Operation hour meter clear | 0, 9999 1 9999 270
+3
+E
+=
+6
+a User group registered
+Fy 172 E441 display/batch clear 9999, (0 to 16) 1 0 181
+i 173 E442 User group registration 0 to 1999, 9999 1 9999 181
+3 174 E443 User group clear 0 to 1999, 9999 1 9999 181
+Oto 5, 7, 8, 10, 12 to
+16, 18, 23 to 27, 30,
+178 =| T700 oe oennal funetion | 37' 42, 43, 46, 47, 50, | 1 60 328
+51, 60, 62, 65 to 67,
+72, 74, 92, 9999
+Oto 5, 7, 8, 10, 12 to
+16, 18, 23 to 27, 30,
+~ (179 | T7041 STR terminal function | 37, 42, 43, 46, 47, 50, | 4 61 328
+5 51, 61, 62, 65 to 67,
+E 72, 74, 92, 9999
+2 RL terminal function
+a
+a 180 T702 selection [E800] 1 0 328
+= RM terminal function Oto 5, 7, 8, 10, 12 to
+6
+# 181 T703 | selection 16, 18, 23 to 27,30, | 1 1 328
+5 RH terminal function 37, 42, 43, 46, 47, 50,
+S 182 T704 selection 51, 62, 65 to 67, 72, 1 2 328
+& oa a eT 74, 92, 9999
+— |183 =| Tro lection [E800-(SC)E] 1 24 328
+£ selection Oto 4, 8, 13 to 15, 18,
+H 23, 24, 26, 27, 30, 37, [E800]
+£ RES terminal function 42, 43, 46, 47, 50, 51, 62
+184 T7141 selection 72, 74, 92, 9999 1 [E800-(SC)E] 328
+9999
+185 T751 NET X1 Input selection 1 328
+186 1752 | NET X2 Input selection ae yy, a “° Bs * 1 328
+187 T753 NET X3 input selection 42, 43, 46, 47, 50, 51, 1 9999 328
+188 T754 NET X4 input selection 72, 74, 92, 9999 1 328
+189 T755 NET X5 input selection 1 328
+
+3. Parameters 59
+
+3.2 Parameter list (by parameter number)
+Function Pr.
+
+Pr.
+group
+
+Setting range
+
+Minimum
+setting
+increments
+
+Initial
+C]
+value
+
+Gr.1 | Gr.2
+
+Refer
+to page
+
+Customer
+setting
+
+190
+
+M400
+
+RUN terminal function
+selection
+
+191
+
+M404
+
+FU terminal function
+selection
+
+0, 1,3, 4, 7, 8, 11 to 16,
+20, 25, 26, 30 to 35, 39
+to 41, 44 to 48, 57, 64,
+70, 80, 81, 90 to 93,
+95, 96, 98 to 101, 103,
+104, 107, 108, 111 to
+116, 120, 125, 126,
+130 to 135, 139 to 141,
+144 to 148, 157, 164,
+170, 180, 181, 190 to
+193, 195, 196, 198,
+199, 206, 211 to 213,
+242 [E800-(SC)E],
+306, 311 to 313, 342
+[E800-(SC)E], 9999
+
+=
+
+292
+
+=
+
+292
+
+192
+
+Output terminal function assignment
+
+M405
+
+ABC terminal function
+selection
+
+0, 1, 3,4, 7, 8, 11 to 16,
+20, 25, 26, 30 to 35, 39
+to 41, 44 to 48, 57, 64,
+70, 80, 81, 82 [E800-
+(SC)EPA], 90, 91, 95,
+96, 98 to 101, 103,
+104, 107, 108, 111 to
+116, 120, 125, 126,
+130 to 135, 139 to 141,
+144 to 148, 157, 164,
+170, 180, 181, 182
+[E800-(SC)EPA, 190,
+191, 195, 196, 198,
+199, 206, 211 to 213,
+242 [E800-(SC)E],
+306, 311 to 313, 342
+[E800-(SC)E], 9999
+
+99
+
+292
+
+193
+
+M451
+
+NET Y1 output selection
+
+194
+
+M452
+
+NET Y2 output selection
+
+195
+
+M453
+
+NET Y3 output selection
+
+196
+
+M454
+
+NET Y4 output selection
+
+0,1, 3,4, 7, 8, 11 to 16,
+20, 25, 26, 30 to 35, 39
+to 41, 44 to 48, 57, 64,
+70, 80, 81, 90 to 93,
+95, 98 to 101, 103,
+104, 107, 108, 111 to
+116, 120, 125, 126,
+130 to 135, 139 to 141,
+144 to 148, 157, 164,
+170, 180, 181, 190 to
+193, 195, 198, 199,
+206, 211 to 213, 242
+[E800-(SC)E], 306,
+311 to 313, 342 [E800-
+(SC)E], 9999
+
+=
+
+9999
+
+292
+
+=
+
+9999
+
+292
+
+=
+
+9999
+
+292
+
+9999
+
+292
+
+E709
+
+Display corrosion level
+
+(1 to 3)
+
+186
+
+60 3. Parameters
+
+3.2 Parameter list (by parameter number)
+
+@ Pr.200 to Pr.299
+
+P Minimum Initial Ren aire
+Function Pr. rou Name Setting range setting value" to nade peabraiaal
+group increments | Gr.1 | Gr.2 [ea J
+a
+£
+3
+9 232 to | D308 to | Multi-speed setting (speed 8
+$ 239 D315 to speed 15) 0 to 590 Hz, 9999 0.01 Hz 9999 234
+Z
+=|
+=
+— |240 E601 _| Soft-PWM operation 0,1 1 1 184
+selection
+241 M043 Analog input display unit 0.1 1 0 318
+switchover
+_ 244 H100 Cooling fan operation 0,1 1 4 245
+selection
+§ 245 G203 Rated slip 0% to 50%, 9999 0.01% 9999 449
+$% |246 | G204__| Slip compensation time 0.01 to 10s 001s 05s 449
+ro constant
+g
+8 [247 | G205 | Constant output range slip | 4 goq9 1 9999 449
+a compensation selection
+a
+_ 249 H101 Earth (ground) fault detection 0,1 1 0 1 246
+at start
+. 0 to 100 s, 1000 to
+—_ 250 G106 Stop selection 1100 s, 8888, 9999 0.1s 9999 440
+_ 251 H200 Output phase loss protection 0,1 1 { 249
+selection
+255 E700 Life alarm status display (0 to 879) 1 0 186
+256 E701 __| !nrushcurrentlimitelreult life | ‘o4, +, 190%) 1% 100% 186
+4 display
+ay — ar
+2 /257 | Evo2 __| Control circuit capacitor life | 0, 14 199%) 1% 100% 186
+[7] display
+5 }258 = |e703 | Main circuit capacitor life | (07, 14 190%) 1% 100% 186
+display
+259 E704 Main circuit capacitor life 0,1 1 0 186
+measuring
+_ 260 E602 PWM frequency automatic 0,10 4 410 184.
+switchover
+a
+2
+C7)
+g
+= 261 A730 Power failure stop selection | 0 to 2 1 0 414
+-_
+i“
+@
+é
+o
+_ 267 T001 Terminal 4 Input selection Oto2 1 0 310
+— |268 |moz2 | Monitor decimal digits 0, 1, 9999 1 9999 270
+selection
+_— 269 E023 Parameter for manufacturer setting. Do not set.
+270 ~—| A200 _| StoP-on-contact control 0,1,11 1 0 375
+3 selection
+8 Stop-on contact excitation
+5 r 275 A205 current low-speed scaling 0% to 300%, 9999 0.1% 9999 375
+Le factor
+oo
+&° |o7e |azoe | PWM carrlerfrequency at — | 9 1.9, gag 1 9999 375
+FS stop-on contact
+277 H630 Stall prevention operation 0,1 1 0 256
+current switchover
+
+3. Parameters
+3.2 Parameter list (by parameter number)
+
+61
+Pr. (lta: itt Refer | Customer
+Function Pr. rou Name Setting range setting value to oa 0 7 ettin
+group increments | Gr.1 | Gr.2 ag b
+278 A100 Brake opening frequency 0 to 30 Hz 0.01 Hz 3 Hz 370
+279 A101 Brake opening current 0% to 400% 0.1% 130% 370
+280 | Ato _| Brake opening current Oto2s 01s 03s 370
+detection time
+8 281 A103 Brake operation time at start |0 to5s 0.1s 0.3s 370
+3 282 A104 Brake operation frequency 0 to 30 Hz 0.01 Hz 6 Hz 370
+3 283 A105 Brake operation time at stop |0to5s 01s 0.3s 370
+g 284 ing _ | Deceleration detection 01 1 0 370
+& function selection ,
+A107 frequency. detection 130,
+285 — 0 to 30 Hz, 9999 0.01 Hz 9999 370,
+Speed deviation excess
+H416 . 450
+detection frequency
+2 286 G400 Droop gain 0% to 100% 0.1% 0% 452
+£
+8
+= 287 G401 Droop filter time constant Oto1s 0.01s 0.3s 452
+2
+a
+_ 289 M431 Inverter output terminal filter | 5 to 50 ms, 9999 1ms 9999 292
+_ 290 mo44 Monitor negative output 0,1,4,5,8,9,12,13 |4 0 270,
+selection 279
+A110 Automatic acceleration/ 209,
+— |282 F500 _| deceleration 9, 1,7, 8, 11 1 0 370
+_ 293 F513 Acceleration/deceleration Oto2 1 0 209
+separate selection
+— |295 |e201 | Frequencychangeincrement | 4 904 9.4,4,40,  |0.01 0 169
+amount setting
+z 0 to 6, 99, 100 to 106,
+$ 296 E410 Password lock level 199, 9999 1 9999 175
+i]
+$ |297 | £411 _ | Password lock/unlock (0 to 5), 1000 to 9998, | , 9999 175
+a 9999
+— |208 |ar741 | Frequency search gain 0 to 32767, 9999 1 9999 is
+_ 299 A701 Rotation direction detection 0, 1, 9999 1 0 403
+selection at restarting
+
+62 3. Parameters
+3.2 Parameter list (by parameter number)
+
+@ Pr.300 to Pr.399
+
+Pr. ite Initial Refer | Customer
+Function Pr. — Name Setting range setting value" topage| settin
+group increments | Gr.1 | Gr.2 bee J
+"2 | M410 DOO output select! 1 292
+313 output selection 0,1,3,4,7,8, 11016, 9999 9;
+20, 25, 26, 30 to 35, 39
+314° =| M411 DO1 output selection to 41, 44 to 48, 57, 64, | 1 9999 292
+70, 80, 81, 90 to 93,
+“ . 95, 96, 98 to 101, 103,
+‘9 1 90, ,
+315 M412 DO2 output selection 104, 107, 108, 111 to 1 9999 292
+116, 120, 125, 126,
+316° | M413 DO3 output selection 130 to 135, 139 to 141, | 1 9999 292
+144 to 148, 157, 164,
+170, 180, 181, 190 to
+“9 . , 180, 181,
+w 317 M414 DO4 output selection 193, 195, 196, 198, 1 9999 292
+x 199, 206, 211 to 213,
+5 318° |M415_ | DOS output selection 242 [E800-(SC)E], 1 9999 292
+rt) 306, 311 to 313, 342
+o * [E800-(SC)E], 9999
+319° M416 DO6 output selection 1 9999 292
+320° |M420_ | RA1 output selection 0.1.3.4.7,.8,11to16, |1 0 292
+20, 25, 26, 30 to 35, 39
+to 41, 44 to 48, 57, 64,
+3219 | M421 RA2 output selection 70, 80, 81, 90, 91,95, | 1 1 292
+96, 98, 99, 206, 211 to
+213, 242 [E800-
+322° |M422 | RA3 output selection (SC)E], 9999 1 4 292
+338 D010 Communication operation 0,1 1 0 223
+q command source
+GJ} —n
+= Communication speed
+8 339 D011 command source Oto2 1 0 223
+F [E800]
+Communication startup 0
+€
+8 340 D001 mode selection 0, 1, 10 1 [E800-(SC)E] 222
+E] 10
+o 342 Noo1 Communication EEPROM 0,1 1 0 *B
+4 write selection
+343 Noso Communication error count | (0 to 999) 1 0 "8
+. Communication reset *
+10 8
+349 Noto selection 0,4 1 a
+359°° [C141 | Encoder rotation direction _| 100, 101 1 101 aoe
+3 367°5 G240 Speed feedback range 0 to 590 Hz, 9999 0.01 Hz 9999 450
+3 368° | G241 Feedback galn 0 to 100 0.1 4 450
+i 369° c140 Number of encoder pulses 2 to 4096 1 1024 ace
+al
+8 374 H800 Overspeed detection level 0 to 590 Hz, 9999 0.01 Hz 9999 266
+wi Encoder signal loss 368
+3765 C148 detection enable/disable 0, 1 1 0 450
+selection
+% setting reference _ *g
+_ 390 N054 frequency [E800-(SC)EPA] 1 to 590 Hz 0.01 Hz 60 Hz
+@ Pr.400 to Pr.499
+Pr. Client Initial Refer | Customer
+Function Pr. rou Name Setting range setting value’ topage| settin
+group increments | Gr.1 | Gr.2 |” P99 E
+414 | Asoo _| PLC function operation 0 to 2, 11, 12 1 0 416
+] selection
+o 41s Ag01 Inverter operation lock mode 0,1 1 0 416
+setting
+
+3. Parameters
+3.2 Parameter list (by parameter number)
+
+63
+Pr. (lta: itt Refer | Customer
+Function Pr. rou Name Setting range setting value topage| settin
+group increments | Gr.1 | Gr.2 ae E
+— 422 Bo03 Position control gain 0 to 150 51 4§1 10s" 434
+Default gateway address 1 “8
+442 Né20 [E800-(SC)E]
+3 443 N624 Default gateway address 2 *8
+5 E800-(SC)E] 0 to 255 1 0
+= 444 N622 Default gateway address 3 *8
+Ww [E800-(SC)E]
+Default gateway address 4 "8
+445 [N623_— | (E800-(SC)E]
+[200/400 V class]
+0, 3, 5, 6, 10, 13, 15,
+16, 20, 23, 30, 33, 40,
+43, 50, 53, 70, 73,
+1800, 1803, 8090,
+450 c200 Second applied motor 8093, 9090, 9093, 1 9999 340
+9999
+[575 V class]
+0, 3, 5, 6, 10, 13, 15,
+16, 30, 33, 8090, 8093,
+9090, 9093, 9999
+451 —_|G300__ | Second motor control 10 to 12, 20, 40, 9999 | 1 9999 97
+method selection
+453 |c201__ | Second motor capacity 0.1 0. 30 kW, 9999 | O.01KW — | 9999 ae
+¢ |454 |c2o2 |Numberofsecondmoter | 4 4 § 9 40, 12, 9999 | 1 9999 345,
+Ss poles 355
+w : 7
+§ [455 |c225 | Second motor excitation 9 1 500 A, 9999 0.01A | 9999 345
+8 [200 V class]
+£ 200 V
+a] [400 V class] | 345,
+5 456 C204 Rated second motor voltage | 0 to 1000 V 0.1V 400 V 355
+8 [575 V class]
+575V
+457 | ¢205 _| Rated second motor 1010400 Hz,9999 |0.01Hz —_—| 9999 345,
+frequency 355
+345,
+458 C220 Second motor constant (R1) | 0 to 50 0, 9999 0.001 & 9999 355,
+410
+459 C221 Second motor constant (R2) | 0 to 50 0, 9999 0.001 0 9999 345
+Second motor constant (L1) / 345,
+460 C222 d-axis inductance (Ld) 0 to 6000 mH, 9999 0.1 mH 9899 355
+Second motor constant (L2) / 345,
+461 C223 q-axis inductance (Lq) 0 to 6000 mH, 9999 0.1 mH 9999 355
+462 C224 Second motor constant (X) | 0% to 100%, 9999 0.1% 9999 345
+. 345,
+463 e210 Second motor auto tuning 0,1,11 1 0 355,
+setting/status 410
+£ 5 495 M500 Remote output selection 0, 1, 10, 11 1 0 307
+£ = 496 M501 Remote output data 1 0 to 4095 1 0 307
+Fra) 497 M502 Remote output data 2 0 to 4095 1 0 307
+— ass  |asoa PG function flash memory |» 9696 (0 to 9999) | 1 0 416
+@ Pr.500 to Pr.599
+Minimum Initial
+Function Pr. Pr Name Setting range setting value | oer nil
+Ebel increments | Gr.1 | Gr.2 bee E
+_ 502 NO13 Stop mode selection at 0102.6 4 0 "8
+communication error
+
+64 3. Parameters
+
+3.2 Parameter list (by parameter number)
+
+Pr. Clann dt Refer | Customer
+Function Pr. : Name Setting range setting value’ e usio
+group increments | Gr | Gr2 topage| setting
+8 503 E710 Maintenance timer 0 (1 to 9998) 1 0 190
+i=
+aq
+i] . . .
+2 |s504 /e711_~—_(| Maintenance timer warning | 9 1, 998, 9999 1 9999 190
+= output set time
+=
+—_ 505 M001 Speed setting reference 1 to 590 Hz 0.01 Hz 60 Hz | 50 Hz | 268
+Display estimated main 6
+% 506 E705 circuit capacitor residual life (0% to 100%) 1% 100% 186
+i 507 E706 Display ABC relay contact 0% to 100% 1% 100% 186
+2 life
+4 509 E708 Display power cycle life (0% to 100%} 0.01% 100% 186
+© Frequency command sign *g
+: 541 | N100 | selection [E800-(SC)E] 9,1 1 Q
+e
+s
+= CC-Link extended setting 0, 1, 12, 14, 18, 100, 48
+E 5440 | N103 | [E800-(SC)E] 112, 114, 118 1 9
+5)
+USB communication station “8
+Pi 547 NO40 number Oto 31 4 0
+> |s54s  |No41 | USB communication check | 91, 99985, 9999 | 0.18 9999 8
+time interval
+549 Nooo Protocol selection 0,1 1 0 "8
+5 [E800]
+s NET mode operation 0, 2, 9999
+s 550 Dot2 command source selection | [E800-(SC)E] 1 S999 223
+£ 0, 5, 9999
+§ [E800]
+9 PU mode operation 2 to 4, 9999
+° 551 D013 command source selection | [E800-(SC)E] 1 9999 228
+3, 4, 9999
+_— 552 H429 Frequency jump range 0 to 30 Hz, 9999 0.01 Hz 9999 254
+i 553 A603 PID deviation limit 0% to 100%, 9999 0.1% 9999 380
+<
+§ . .
+3/554 | acog _| PID signal operation 0 to 3, 10 to 13 1 0 380
+Q selection
+a
+2 555 E720 Current average time 0.1to1s 01s 1s 191
+& 556 E721 _| Data output mask time Oto 20s 0.18 Os 191
+=
+6
+E
+‘=
+£ Current average value Inverter rated
+2 557 E722 monitor signal output 0 to 500A 0.01A current 191
+S reference current
+&
+3
+<
+— |seo /a7ig |Secondfrequency search | 9 1, 39767, 9999 1 9999 345,
+gain 410
+— |563  |mo21 | Energization time carrying- | (4 1. 65535) 1 0 270
+over times
+— |se4 |moa1 | OPerating time carrying-over | 64 4, g5535) 1 0 270
+times
+=
+%
+<¢
+8
+i
+$ [569 aaa | Serond motor speed contro! | o% to. 200%, 9999 | 0.1% 9999 102
+E
+Ss
+5
+°
+@
+a
+
+3. Parameters 6 5
+
+3.2 Parameter list (by parameter number)
+P Minimum Initial ren aren
+Function Pr. ro Name Setting range setting value to saae setting»
+group increments | Gr.1 | Gr.2 ae E
+ten
+£
+Fd «te catine eattnan (2.
+ri 570 E301 Multiple rating setting [3: 1,2 1 2 171
+a phase]
+|
+=
+—_ 571 F103 Holding time at a start Oto 10s, 9999 0.15 9999 207
+_ 574 e211 Second motor online auto 0,1 1 0 362
+tuning
+= [875 |As21 | Putputinterruption detection | +, 3600s, 9999 [0.15 1s 380
+i“
+8 [576 | aez2 | Putput interruption detection | 9 14 590 Hz 0.01Hz |oHz 380
+a
+& 577 — | ag23_ | Puthut interruption cancel | a0 0% to 1100% 0.1% 1000% 380
+592 A300 Traverse function selection | 0 to 2 1 0 378
+593 A301 Maximum amplitude amount | 0% to 25% 0.1% 10% 378
+@ |504 | aso2 |Amplitude compensation [oy 4, 50% 0.1% 10% 378
+4 amount during deceleration ;
+> 7 7
+£& 505  |a303 | Amplitude compensation — | o, 1, 50% 0.1% 10% 378
+e amount during acceleration
+596 A304 Amplitude acceleration time | 0.1 to 3600s 01s 5s 378
+597 A305 Amplitude deceleration time | 0.1 to 3600s 0.18 5s 378
+@ Pr.600 to Pr.699
+Minimum Initial
+Function Pr. rr Name Setting range setting value! peer Customer
+group increments | Gr.1 | Gr.2 pe 9
+® |e00 |Hoo1 |Firstfree thermal reduction |) 1. saq Hiz,9909 «= |0.01Hz ‘| 9999 238
+o frequency 1
+4 "| ,
+5 |601 |Hoo2 Fist free thermal reduction | 49, to 100% 1% 100% 238
+3 = ‘i
+E |602 | Hoos First free thermal reduction | 9 1, sa Hz, 9999 0.01Hz | 9999 238
+£ frequency 2
+2 |603 |Hoog | First free thermal reduction | 44, +, 199% 1% 100% 238
+6 ratio 2
+8 |604 Hoos | Firstfree thermal reduction | 5, 599 42,9999 -|o.01Hz —_—| gg99 238
+TT] frequency 3
+_ 607 H006 Motor permissible load level | 110% to 250% 1% 150% 238
+— |e60s |Ho1g | Second motor permissible | 4199, t 250%, 9999 | 1% 9999 238
+load level
+r) 609 A624 PID set point/deviation input 205 4 2 380,
+2 selection 396
+°
+8 7
+2 610 A625 PID measured value input 2105 4 3 380,
+ia selection 396
+— 611 |F003 | Acceleration time at arestart |0 to 3600s,9909 [0.15 9999 ton
+Inverter output fault
+—_ 631 H182 detection enable/disable 0,1 1 0 247
+selection
+8 639 A108 Brake opening current 0.1 1 0 370
+= selection ,
+s
+3
+g .
+° 640 A109 Brake operation frequency 0.1 1 0 370
+r selection
+o
+
+66 3. Parameters
+3.2 Parameter list (by parameter number)
+
+Pr. Dntianti dt Refer | Customer
+Function Pr. rou Name Setting range setting value’ (onesD settin
+group increments | Gr.1 | Gr.2 Pee &
+i 653 G410 Speed smoothing control 0% to 200% 0.1% 0% 453
+€
+c-]
+a
+a
+£
+= .
+B [654 [Garr | Speed smoothing cutoff 9 t 120 Hz 0.01Hz |20Hz 453
+£ requency
+7)
+3
+@
+J
+i-5
+7)
+— |ee5 |c125 | Regeneration avoidance | oo, 200% 0.1% 100% 446
+frequency galn
+SF-PR sllp amount
+—_ 673 Go060 adjustment operation 2, 4, 6, 9999 1 9999 433
+selection [200/400 V class]
+SF-PR slip amount
+_- 674 G061 adjustment gain [200/400 V_ | 0% to 500% 0.1% 100% 433
+class]
+— |675 |asos | User parameter auto storage |. oo99 1 999 416
+function selection
+_ 690 H881 Deceleration check time 0 to 3600 s, 9999 01s 1s 130
+® |e92  |Ho11 | Second free thermal 0to590Hz,9999 |0.01Hz | as99 238
+r reduction frequency 1
+3 |693 |Ho12 | Second free thermal 4% to 100% 1% 100% 238
+3 reduction ratio 1
+E |694  |Ho13 | Second free thermal 0to.590Hz,9999 |0.01Hz | 9999 238
+= reduction frequency 2
+° Second free thermal 5 9
+: 695 H014 reduction ratlo 2 1% to 100% 1% 100% 238
+& |e96 |Ho1s | Second free thermal 0 to 590 Hz, 9999 0.01Hz | 9999 238
+TT] reduction frequency 3
+— 699 T740 Input terminal filter 5 to 50 ms, 9999 ims 9999 328
+@ Pr.700 to Pr.799
+Minimum Initial
+Function Pr. Pr Name Setting range setting value? oer nile
+group increments | Gr4 | Gr2 |” Pa9 $
+702 C106 Maximum motor frequency 0 to 400 Hz, 9999 0.01 Hz 9999 355
+Induced voltage constant 0 to 5000 mV (rad/s), | 0.1 mV
+706 C130 (phi fy 9999 (rad/s) 9999 355
+707 C107 Motor inertia (integer) 10 to 999, 9999 1 9999 355
+711 C131 Motor Ld decay ratlo 0% to 100%, 9999 0.1% 9999 355
+< 712 C132 Motor Lq decay ratlo 0% to 100%, 9999 0.1% 9999 355
+S 7 7 .
+@ l717 | c1e2 | Starting resistance tuning — | go, 4 200%, 9999 (| 0.1% 9999 355
+8 compensation coefficient 1
+8 |720 |c1ag | Starting resistance tuning | oy, 1 290%, 9999 | 0.1% 9999 345
+3 compensation coefficlent
+= Starting magnetic pole
+721 C185 position detection pulse 0 to 6000 pis, $999 1 us 9999 355
+width
+724 C108 Motor inertia (exponent) 0 to 7, 9999 1 9999 355
+725 [6133 | Moter protection current 499% 0 500%, 9999 | 0.1% 9999 365
+Device instance number
+3 728 N052 (Upper 3 digits) [E800- 0 to 419 1 0 "8
+E (SC)EPA]
+= Device instance number
+uw 729 NO53_—_| (Lower 4 digits) [E800- 0 to 9999 1 ) 8
+(SC)EPA]
+
+3. Parameters 67
+3.2 Parameter list (by parameter number)
+Pr. (latina Initial Refer | Customer
+Function Pr. rou Name Setting range setting value to oa 0 7 ettin
+group increments | Gr.1 | Gr.2 eel &
+737  |c2se__| Starting resistance tuning | n», «200%, 9999 | 0.1% 9999 355
+compensation coefficient 2 , .
+Second motor induced 0 to 5000 mV (rad/s), | 0.1 mV
+738 230 voltage constant (phi f) 9999 (rad/s) 9998 355
+739 C231 _| Second motor Ld decay ratio |0% to 100%, 9999 | 0.1% 9999 355
+740 C232 _| Second motor Lq decay ratio |0% to 100%, 9999 | 0.1% 9999 355
+~ Second motor starting
+g (|741 C282 _| resistance tuning 0% to 200%, 9999 | 0.1% 9999 355
+= compensation coefficient 1
+oa ry
+7) Second motor magnetic pole
+5 742 C285 | Setaction pulse width 0 to 6000 us,9999 | 1 us 9999 355
+o 7
+= |743 | c206 Second motor maximum 0 to. 400 Hz, 9999 0.01Hz | 9999 355
+requency
+744 |c207__ | S8ond motor inertia 10 to 999, 9999 1 9999 355
+{integer)
+74s |c203_| Second motor inertia 0 to 7, 9999 1 9999 355
+(exponent)
+746 |c233 | Second motor protection — | jogo 9 500%, 9999 | 0.1% 9999 355
+current level
+— |759  |A600 | PID unit selection 0 to 43, 9999 1 9999 393
+Operati \ mont [E800][E80o-
+774 ~— «| M104 eration pane monitor | (SC)EPB] 1 9999 270
+selection 1103, 5to 14, 17to 20,
+23 to 25, 32, 33, 35,
+> 38, 40 to 42, 44, 45, 50
+= Operation panel monitor to 57, 61, 62, 67, 91,
+$ |775 m102 stlection as 97, 100, 9999 1 9999 270
+5 [E800-(SC)EPA]
+= 1 to 3, 5to 14, 17 to 20,
+23 to 25, 32, 33, 35,
+Operation panel monitor 38, 40 to 42, 44, 45, 50
+776 M103 selection 3 to 57, 61, 62, 67,83, | 1 9999 270
+91, 97, 100, 9999
+— |779  |no14 | Operation frequency during | 9+, 599Hz,9999 |0.01Hz _—‘| 9999 8
+communication error
+— |791 |Fo7o |Accelerationtimeiniow- = fy 4, 3600 s,9999 «=| 0.1 9999 196
+speed range
+— |792 |Fo71 |Decelerationtimeiniow- = 14 4, s600s,e999 «= s|0.1 9999 196
+speed range
+@Pr.800 to Pr.999
+P Minimum Initial ren Cust
+Function| Pr. rou Name Setting range setting value’! to saae setting»
+group increments Gr.1 | Gr.2 Pay &
+— |s00 |c200 | control method selection oo en 9, 10 to 12, 19, | 4 40 97
+— |801 |H704 | output limit level 0% to 400%, 9999 | 0.1% 99g a3
+—_ 802 G102 Pre-excitation selection 0,1 1 0 434
+Constant output range 114,
+3 803 G210 torque characteristic Oto 2, 10 1 0 143
+F selection
+E |s04 |paoo | Torquecommand source | 9 4 3 t06 1 0 143
+8 selection
+gs Torque command value 114
+I 10, Uy ry 10, ?
+E 805 D401 | RAM 600% to 1400% 1% 1000% 143
+F Torque command value ° ° 9 114,
+806 D402 | RAM, EEPROM} 600% to 1400% 1% 1000% 143
+
+6 8 3. Parameters
+
+3.2 Parameter list (by parameter number)
+
+Function Pr. He Name Setting range setting value ! ote Grau
+group increments | Gr Gr2 topage| setting
+807 H410 Speed limit selection 0,1 1 0 147
+808 H411 Speed limit 0 to 400 Hz 0.01 Hz 60 Hz 50 Hz | 147
+@
+2 809 H412 Reverse-side speed limit 0 to 400 Hz, 9999 0.01 Hz 9999 147
+810 H700 Torque limit input method 0to2 1 0 114
+selection
+811 D030 Set resolution switchover 0, 10 1 0 114
+812 |H701 _| Torque Iimit level 0% to 400%, 9999 0.1% 9999 114
+(regeneration)
+E |a13  |H7o2 | Torque limit level (3rd 0% to 400%, 9999 | 0.1% ggag 414
+a quadrant)
+3 oe
+B |s14 —|H703 | Torque limit level (4th 0% to 400%, 9999 0.1% 9999 114
+2 quadrant)
+815 H710 Torque limit level 2 0% to 400%, 9999 0.1% 9999 114
+816 | H729_—| Torque limitlevel during — | 90, +4 400%, 9989 | 0.1% 9999 114
+acceleration
+17 |H721 | Torque Iimitlevel during =| n, 1 400%, 9999 | 0.1% ggg 114
+deceleration
+820 G211 Speed control P gain 1 0% to 1000% 1% 60% 121
+821 G212 Speed control integral time 1 | 0 to 20s 0.001 s 0.333 s 121
+822 T003 Speed setting filter 1 0 to 5s, 9999 0.001 s 9999 316
+623° G215 Speed detectlon filter 1 Oto 0.01s 0.001 s 0.001 s 154
+Torque control P gain 1
+824 G213 (current loop proportional 0% to 500% 1% 100% 149
+galn)
+825 | G214 | Terquecontrol Integral time 1 | 4 +, 509 ms o.1ms  |5ms 149
+~ (current loop integral time)
+S 826 T004 Torque setting filter 1 0 to 5 s, 9999 0.001 s 9999 316
+§ 828 G224 Model speed control gain 0 to 1000 rad/s 1 rad/s 100 rad/s 124
+= 830 G311 Speed control P gain 2 0% to 1000%, 9999 1% 9999 121
+S 831 G312 Speed control Integral time 2 | 0 to 20 s, 9999 0.001 s 9999 121
+832 Toos Speed setting filter 2 Oto 5s, 9999 0.001 s 9999 316
+833°5 | G315 Speed detection filter 2 0 to 0.01 s, 9999 0.001 s 9999 154
+Torque control P gain 2
+834 G313 (current loop proportional 0% to 500%, 9999 1% 9999 149
+gain)
+Torque control integral time 2
+835 G314 . 0 to 500 ms, 9999 0.1 ms 9999 149
+(current loop integral time)
+836 Too6 Torque setting filter 2 Oto 5s, 9999 0.001 s 9999 316
+840 G230 Torque bias selection 0 to 3, 9999 1 9999 126
+841 G231 Torque bias 1 600% to 1400%, 9999 | 1% 9999 126
+842 G232 Torque bias 2 600% to 1400%, 9999 | 1% 9999 126
+843 G233 Torque bias 3 600% to 1400%, 9999 | 1% 9999 126
+g 844 G234 | Torque bias filter 0 to 5 s, 9999 0.001 s 9999 126
+g 845 G235 Torque bias operation time | 0 to 5s, 9999 0.015 9999 126
+a 7
+5 |eas |G236 | Torque bias balance 0% to 100%, 9999 | 0.1% 9999 126
+FE compensation
+347 ‘| G237 rane torque bias terminal | yo, 1 400%, 9999 | 14% 9999 126
+848 | G238_—| Fallttime torque bias terminal | yo, +, 4oqy%, 9999 | 1% 9999 126
+
+4galn
+
+3. Parameters
+3.2 Parameter list (by parameter number)
+
+69
+Initial
+
+Function Pr. rr Name Setting range setting value’ peer Customer
+group increments | Gr.1 | Gr.2 ae b
+Analog input offset 9 ° 6 9
+849 T007 adjustment 0% to 200% 0.1% 100% 316
+850 G103 Brake operation selection Oto2 1 0 434
+853 H417 Speed deviation time Oto 100s 0.1s 1s 130
+5 854 G217 Excitation ratlo 0% to 100% 1% 100% 155
+3 . . 114,
+5 |ass | Todo _| Terminal 4 function 0, 4, 6, 9999 1 0 256,
+w= assignment
+£ 315
+= |e59 |c126 | TorduecurrentiRated PM =| 9 4, 500 a, 9999 0.01A _—_ | 999 345,
+3 motor current 355
+<q Second motor torque 345
+860 C226 currentRated PM motor 0 to 500 A, 9999 0.01A 9999 355
+current
+864 M470 Torque detection 0% to 400% 0.1% 150% 306
+865 M446 Low speed detection 0 to 580 Hz 0.01 Hz 1.5 Hz 301
+8
+3 866 M042 Torque monitoring reference | 0% to 400% 0.1% 150% 270
+z
+AM output filter [E800-
+_ 867 M321 4I[E800-5] Oto5s 0.01s 0.015 283
+_— 870 M440 Speed detection hysteresis | 0 to 15 Hz 0.01 Hz 0 Hz 301
+© Input phase loss protection
+z § 872 H201 selection [3-phase] 0,1 1 1 249
+£ & {9735 |H415 | Speed limit 0 to 400 Hz 0.01 Hz 20 Hz 130
+=
+a* {874 H730 OLT level setting 0% to 400% 0.1% 150% 114
+Speed feed forward control/
+877 G220 model adaptive speed Oto2 1 0 124
+E control selection
+e 878 G221 Speed feed forward filter 0.01 to1s 0.01s 0.01 s 124
+7)
+3 |879 =| Gazz Reed feed forward torque | 0% to 400% 0.1% 150% 124
+5 121
+o 880 C114 Load inertia ratio 0 to 200 times 0.1 time 7 times 12. 4
+881 G223 Speed feed forward gain 0% to 1000% 1% 0% 124
+882 G120 Regeneration avoidance Oto2 1 0 446
+operation selection
+8 [200 V class]
+5 400 V
+3 883 6121 Regeneration avoidance 300 to 1200 V O.1V [400 V class] 446
+a operation level 780 V
+5 [575 V class]
+3 944V
+= Regeneration avoldance
+% 885 G123 compensation frequency 0 to 45 Hz, 9999 0.01 Hz 6 Hz 446
+e limit value
+sss | G124__ | Regeneration avoidance | po, + o00% 0.1% 100% 446
+voltage galn
+5 888 E420 Free parameter 1 0 to 9999 1 9999 178
+cy)
+E
+a 889 E421 Free parameter 2 0 to 9999 1 9999 178
+a
+2
+ira
+
+70 3. Parameters
+3.2 Parameter list (by parameter number)
+
+P Minimum Initial Ren arn
+Function Pr. r Name Setting range setting value’ efer | Sustomer
+group increments | Gr | Gr2 topage| setting
+Cumulative power monitor 270,
+891 M023 digit shifted times 0 to 4, 9999 1 9999 286
+892 M200 Load factor 30% to 150% 0.1% 100% 286
+Energy saving monitor Inverter rated
+2 893 M201 reference (motor capacity) 0.1 to 30 kW 0.01 kW capacity 286
+5 Control selection during
+§ 894 M202 =| commercial power-supply Oto3 1 0 286
+€ operation
+o
+£ |e95 |mzo3 | Power saving rate reference | 4 4 g999 1 9999 286
+2 value
+Ss 896 M204 =| Power unit cost 0 to 500, 9999 0.01 9999 286
+foo] = 7
+S |s97 | m205_ | Power saving monitor 0 to 1000 h, 9999 1h 9999 286
+uo average time
+sss |mz06_—| Power saving cumulative =| 9 4 1, 9999 1 9999 286
+monitor clear
+99 | M207 _| OPeration time rate 0% to 100%, 9989 0.1% 9999 286
+(estlmated value}
+_ Display safety fault code "4
+986 H110 [EB00-SCE] Oto 127 1 0
+5 990 E104 PU buzzer control 0, 1 1 1 165
+cs 991 E105 PU contrast adjustment 0 to 63 1 58 166
+D Oto 3, 5to 14, 17 to 20,
+& Operation panel setting dial | 23 to 25, 32, 33, 35,
+2 992 M104 push monitor selection 38, 40 to 42, 44, 45, 50 | 1 0 270
+A [E800] to 57, 61, 62, 67, 91,
+= 97, 100
+_— 997 H103 Fault initiation 0 to 255, 9999 1 9999 248
+PM parameter 0, 8009, 8109, 9009,
+— 1998 E430 initializationGimple) 9109, ' 0 104
+oso [e431 | Automatic parameter 10, 12, 20, 21,9999 | 1 9999 179
+— settingGimple) BOOS
+@ Pr.1000 to Pr.1099
+Minimum Initial
+Function Pr. [He Name Setting range setting value’ peter (CUS eniEs
+group increments | Gr | Gr2 topage| setting
+— |1002 |c1s0 | La tuning target current 50% to 150%, 9999 0.1% 9999 355
+adjustment coefficient
+4 1006 E020 Clock (year) 2000 to 2099 1 2000 158
+8 1007 E021 Clock (month, day) Jan. 1 to Dec. 31 1 101 158
+©) 1008 E022 Clock (hour, minute) 0:00 to 23:59 1 0 158
+— |41015 |aco7 | Integral stop selectionat = [9 4,5 1 0 380
+limited frequency
+
+3. Parameters 71
+
+3.2 Parameter list (by parameter number)
+
+P Minimum Initial ren aren
+Function Pr. ro Name Setting range setting value to saae setting»
+group increments | Gr.1 | Gr.2 ae b
+1020 A900 Trace operation selection Oto3 1 0 418
+. 1, 2, 5, 10, 50, 100,
+1022 A902 Sampling cycle 500, 1000 1 1 418
+1023 A903 Number of analog channels | 1 to 8 1 4 418
+1024 A904 Sampling auto start 0, 1 1 0 418
+1025 A905 Trigger mode selection Oto4 1 0 418
+1026 Agog | Number of sampling before | o., +, 199% 1% 90% 418
+trigger
+1027 A910 Analog source selection 201 418
+{1ch)
+4028 Ag11 Analog source selection 202 418
+({2ch)
+Analog source selection
+1028 | A912 | sch) 110 3, 5 to 14, 17 to 20, 203 418
+7 23, 24, 32, 33, 35, 40
+1030 | A913 ach source selection to 42, 52 to 54, 61, 62, 204 418
+Anal lecti 67, 83 [E800- 1
+4031 [Agta | (pty 7g Souree salen (SC)EPA], 91, 97, 201 205 418
+(5ch) to 210, 212, 213, 230
+g (1032 | a9ts eh) source selection to 232, 235 to 238 206 418
+& ,
+e 1033 AIG Analog source selection 207 418
+{7ch)
+4034 A917 Analog source selection 208 418
+{8ch)
+1035 A918 Analog trigger channel 1to8 1 1 418
+1036 A919 Analog trigger operation 0.4 1 0 418
+selection
+1037 A920 Analog trigger level 600 to 1400 1 1000 418
+1038 A930 Digltal source selection (1ch) 0 418
+1039 A931 Digital source selection (2ch) 0 418
+1040 A932 Digital source selection (3ch) 0 418
+1041 A933 Digital source selection (4ch) 0 to 255 1 0 418
+1042 A934 Digital source selection (Sch) 0 418
+1043 A935 Digltal source selection (6ch) 0 418
+1044 A936 Digital source selection (7ch) 0 418
+1045 A937 Digital source selection (8ch) 0 418
+1046 A938 Digital trigger channel 1to8 1 1 418
+1047 A939 Digital trigger operation 0.4 1 0 418
+selection
+@Pr.1100 to Pr.1399
+P Minimum Initial Ren aire
+Function Pr. rou Name Setting range setting value ' to sane setting»
+group increments | Gr.1 | Gr.2 bee J
+1103 |Fo4q _ | Deceleration time at 0 to 3600s 01s 5s 196
+emergency stop
+2 1106 M050 Torque monitor filter 0 to 5s, 9999 0.01s 9999 270
+5 1107 M051 Running speed monitor filter | 0 to 5 s, 9999 0.015 9999 270
+S |4108 |Mos2 | Excitation current monitor {91,5 5 9999 001s 9999 270
+= filter
+Station number in inverter-to-
+— "8
+1124 N681 inverter link [E800-(SC)E] 0 to 5, 9999 1 9999
+Number of Inverters In
+— 1125 N682 Inverter-to-Inverter link 2to6 1 2 "8
+system [E800-(SC)E]
+<
+2
+DB .
+< 1150 to | A810 to | PLC function user
+S |1199 | A859 | parameters 1 to 50 0 to 65535 1 9 416
+al
+a
+
+72 3. Parameters
+3.2 Parameter list (by parameter number)
+Pr. lntianti eulit i} Refer | Customer
+Function Pr. rou Name Setting range setting value topage| settin
+group increments | Gr.1 | Gr.2 Pee b
+AM output offset calibration
+-_ 1200 M390 [E800-4][E800-5] 2700 to 3300 1 3000 283
+Inverter identification enable/ 8
+_ 1399 N649 disable selection [E800- 0,1 1 1
+(SC)E]
+@ Pr.1400 to Pr.1499
+Minimum Initial
+Function; Pr. Pe Name Setting range setting value" eer Customer
+group Increments | Gr.1 | Gr.2 bee g
+Motor induced voltage
+_ 1412 C135 constant (phl f) exponent 0 to 2, 9999 1 9999 355
+[E800-(SC)E]
+Second motor induced
+_— 1413 C235 voltage constant (phi f) 0 to 2, 9999 1 9999 355
+exponent [E800-(SC)E]
+Ethernet communication *g
+1424 N6sO network number [E800-(SC)E] 1 to 238 1 1
+Ethernet communication "8
+1425) /N6S51 | tation number [E800-(SC)E] |‘ * 12° 1 1
+Link speed and duplex mode 3B
+1426 /N641 | colection [E800-(SC)E] Oto4 1 0
+a Ethernet function selection 1 | [E800-(SC)EPA] *
+2 1427 N630 [E800-(SC)E] 502, 5000 to 5002, 1 5001 8
+2 5006 to 5008, 5010 to
+6 Ethernet function selection 2 | 5013, 44818, 45237, "2
+§ | 1428 |N631 | [E800-(SC)E] 45238, 47808, 61450, 49237
+3 9999
+5 142 Ne32_| Ethernet function selection 3 | [E800-(SC)EPB] 1 452: “8
+Pa 9 [N62 | [E800-(SC)E] 502, 5000 to 5002, 5238
+E Eth ‘func lection 4 5006 to 5008, 5010 to
+s 1430 N633 ernet tunction selection 4 | 5013, 34962, 45237, | 4 9999 8
+w [E800-(SC)E] 45238, 61450, 9999
+Ethernet signal loss
+1431 N643 detection function selection | 0 to3 4 3 "8
+[E800-(SC)E]
+Ethernet communication
+1432 NG44 check time interval [E800- 0 to 999.8 s, 9999 01s 15 *8
+(SC)E]
+
+3. Parameters 7 3
+
+3.2 Parameter list (by parameter number)
+
+P Minimum Initial ren aren
+Function Pr. r Name Setting range setting value efer | Sustomer
+group increments | Gr | Gr2 topage| setting
+IP address 1 (Ethernet) [E800- *B
+1434 N600 (SC)E] 0 to 255 1 192
+IP address 2 (Ethernet) [E800- *B
+1435 N601 (SC)E] 0 to 255 1 168
+IP address 3 (Ethernet) [E800- "8
+1436 N602 (SC)E] 0 to 255 1 50
+IP address 4 (Ethernet) [E800- +8
+1437 N603 (SC)E] 0 to 255 1 1
+1438 N610 Subnet mask 1 [E800-(SC)E] | 0 to 255 1 255 "8
+1439 N611 Subnet mask 2 [E800-(SC)E] | 0 to 255 1 255 8
+1440 N612 Subnet mask 3 [E800-(SC)E] | 0 to 255 4 255 *8
+1441 |N613 | Subnet mask 4 [E800-(SC)E] | 0 to 255 1 0 “8
+IP filter address 1 (Ethernet) +8
+1442 N660 [E800-(SC)E] 0 to 255 1 0
+IP filter address 2 (Ethernet) *g
+1443 N661 [E800-(SC)E] 0 to 255 1 0
+IP filter address 3 (Ethernet) +g
+1444 N662 [E800-(SC)E] 0 to 255 1 0
+IP filter address 4 (Ethernet) *g
+1445 N663 [E800-(SC)E] 0 to 255 1 0
+IP filter address 2 range
+1446 N664 specification (Ethernet) 0 to 255, 9999 1 9999 *8
+[E800-(SC)E]
+IP filter address 3 range
+~ 1447 N665 specification (Ethernet) 0 to 255, 9999 1 9999 *8
+£ [E800-(SC)E]
+e IP filter address 4 range
+i 1448 N666 specification (Ethernet) 0 to 255, 9999 1 9999 "8
+[E800-(SC)E]
+Ethernet command source
+1449 +|N670_ | selection IP address 1 [E800- | 0 to 255 1 0 *8
+(SC)E]
+Ethernet command source
+1450 N671 selection IP address 2 [E800- | 0 to 255 1 0 "8
+(SC)E]
+Ethernet command source
+1451 N672 selection IP address 3 [E800- | 0 to 255 1 0 *8
+(SC)E]
+Ethernet command source
+1452 N673 selection IP address 4 [E800- | 0 to 255 1 0 "B
+(SC)E]
+Ethernet command source
+1453 N674 selection IP address 3 range | 0 to 255, 9999 1 9999 8
+specification [E800-(SC)E]
+Ethernet command source
+1454 N675__‘| selection IP address 4 range | 0 to 255, 9999 4 9999 *8
+specification [E800-(SC)E]
+1455 N642 Keepalive time [E800-(SC)E] | 1 to 7200s 1 60s "8
+Network diagnosis selection | 0 to 2, 9999 *g
+1456 N647 [E800-(SC)E] 1 9999
+Extended setting for Ethernet
+signal loss detection +g
+1457 N648 function selection [E800- 0 to 3, 8888, 9999 1 9999
+(SC)E]
+
+74 3. Parameters
+3.2 Parameter list (by parameter number)
+
+Pr. Client dt Refer | Customer
+Function Pr. rou Name Setting range setting value’ to oa 0 settin
+group increments | Gr.1 | Gr.2 Pee b
+1480 |H520 | Load characteristics 0,1 (210 5,81t085) |4 0 261
+measurement mode
+1481 H524 Load characteristics load 0% to 400%, 8888, 0.1% 9999 261
+reference 1 9999
+Load characteristics load 0% to 400%, 8888, 6
+1482 H522 reference 2 9999 0.1% 9999 261
+Load characteristics load 0% to 400%, 8888,
+5 1483 H523 reference 3 9999 0.1% 9999 261
+7 Load characteristics load 0% to 400%, 8888, °
+ES 1484 H524 reference 4 9999 0.1% 9999 261
+y Load characteristics load 0% to 400%, 8888,
+3 1485 H525 reference 5 9999 0.1% 9999 261
+£ Load characterlstics
+é 1486 H526 : 0 to 590 Hz 0.01 Hz 60 Hz | 50 Hz | 261
+3 maximum frequency
+2 1487 | H527 _ | Load characteristics 0 to 590 Hz 0.01Hz |6Hz 261
+8 minimum frequency
+& |1488 | H531 Upper limitwarning detection | oo, 19 400%, 9999 «| 0.1% 20% 261
+ao)
+s Lower limit warning 5 ¢ 6 5
+Ss 1489 H532 detection width 0% to 400%, 9999 0.1% 20% 261
+1490 |H533 | UPhOr limit fault detection | oy, 10 400%, 9999 | 0.1% 9999 261
+1491 |Hsa4 | Lower limit fault detection | 9%, 1 400%, 9999 | 0.1% 9999 261
+Load status detection signal
+1492 H535 delay time / load reference Oto60s 01s 1s 261
+measurement waiting time
+_ 1499 E415 Parameter for manufacturer setting. Do not set.
+
+3. Parameters 7 5
+
+3.2 Parameter list (by parameter number)
+@ Alphabet (calibration parameters, etc.)
+
+Pr. Chiba Initial Refer | Customer
+Function Pr. rom Name Setting range setting value! topage| settin
+group increments | Gr.1] Gr2 |” P*8 g
+co FM terminal calibration
+(900° M310 | 500-1] — — _ 283
+C1 AM terminal calibration
+(901) |™329 | fe 800-4]1E 800-5] - - — 283
+C2 ws |T209 | Terminal 2 frequency setting | 9 4, 599 t4z o.01Hz |oHz 318
+(902) bias frequency
+c3
+(o02)"> | 7204 _orminal 2 frequency SettINg | 0%, 10 300% 0.1% 0% 318
+125 i i
+(eos | 7202 sen heauenee Setting | 9 to 590 Hz 0.01Hz | 60 Hz|50 Hz|318
+= C4 i i
+5 wg |T203 | Terminal 2 frequency setting | 5», +, 509% 0.1% 100% 318
+3 (903) gain
+g cs Terminal 4 frequency setting
+g 904)" T400 blas frequency 0 to 580 Hz 0.01 Hz 0 Hz 318
+<
+C6 i i
+2 (aogys | 7404 perminal 4 fraquency seHting | o%, to 300% 0.1% 20% 318
+a
+= 126 i i
+S | oosys | 7402 pan trequenee setting | 9 to 590 Hz 0.01Hz | 60Hz|50Hz|318
+C7 i i
+caosy | 7403 we frequency setting | 9», 1 300% 0.1% 100% 318
+C38 Terminal 4 bias command 6 6 °
+(932) T410 (torque/magnetic flux) 0% to 400% 0.1% 0% 318
+c39 Terminal 4 bias (torque/ 9 9 3
+(932) T411 magnetic flux) 0% to 300% 0.1% 0% 318
+C40 i i
+(esaye | 412 terqucinecnetic Mux) 0% to 400% 0.1% 150% 318
+c41 Terminal 4 galn (torque/
+(933)"6 T413 magnetic flux) 0% to 300% 0.1% 100% 323
+42
+348 A630 PID display blas coefficlent | 0 to 500, 9999 0.01 9999 393
+a C43
+at (93 46 A631 PID display blas analog value | 0% to 300% 0.1% 20% 393
+7)
+= C44 . . .
+2 (9 35)°6 A632 PID display gain coefficient | 0 to 500, 9999 0.01 9999 393
+C45
+(935) A633 PID display gain analog value | 0% to 300% 0.1% 100% 393
+9 PR.CL Parameter clear {0), 1 1 0 456
+2 ALLC All parameter clear {0), 1 1 0 456
+£
+&
+- ER.CL Fault history clear {0), 1 1 0 458
+a
+)
+_ PR.CH Initial value change list _ 1 0 52
+_ PM PM initialization 0 1 0 104
+_ AUTO Automatic parameter setting | — _ _— 179
+_ PR.MD Group parameter setting (0), 1,2 1 0 78
+
+*1  Gr.1 and Gr.2 are the parameter initial value groups. (Refer to page 52).
+
+*2 Differs depending on the capacity.
+6%: FR-E820-0050(0.75K) or lower, FR-E840-0026(0.75K) or lower, and FR-E820S-0050(0.75K) or lower
+5%: FR-E860-0017(0.75K)
+4%: FR-E820-0080(1.5K) to FR-E820-0175(3.7K), FR-E840-0040(1.5K) to FR-E840-0095(3.7K), and FR-E820S-0080(1.5K) or higher
+3%: FR-E820-0240(5.5K) or higher, FR-E840-0120(5.5K) or higher, FR-E860-0027(1.5K), and FR-E860-0040(2.2K)
+2%: FR-E860-0061 (3.7K) or higher
+
+*3 Differs depending on the capacity.
+5 s: FR-E820-0175(3.7K) or lower, FR-E840-0095(3.7K) or lower, FR-E860-0061 (3.7K) or lower, and FR-E8208-0110(2.2K) or lower
+10 s: FR-E820-0240(5.5K) or higher, FR-E840-0120(5.5K) or higher, and FR-E860-0090(5.5K) or higher
+
+76 3. Parameters
+
+3.2 Parameter list (by parameter number)
+
+*4 Differs depending on the capacity.
+6%: FR-E820-0015(0.2K) or lower and FR-E820S-0015(0.2K) or lower
+4%: FR-E820-0030(0.4K) or higher, FR-E840-0016(0.4K) or higher, and FR-E820S-0030(0.4K) or higher
+1%: FR-E860-001 7(0.75K) or higher
+*5 The setting is available when a plug-in option for Vector control is installed.
+*6 Onthe LCD operation panel used as the command source, the parameter number in parentheses appears instead of that starting with the letter C.
+“7 For the Ethernet model and the safety communication model, the setting is available only when the FR-A8AY is installed.
+“8 For details, refer to the Instruction Manual (Communication).
+*9 Available when the PLC function is enabled. (Pr.313 to Pr.315 are always available for settings in the Ethernet model and the safety
+communication model.)
+*10 For the standard model, the setting is available only when a communication option is installed.
+*11 For details, refer to the FR-E800-SCE Instruction Manual (Functional Safety).
+
+3. Parameters 77
+3.2 Parameter list (by parameter number)
+3.3 Use of a function group number for the
+identification of parameters
+
+A parameter identification number shown on the PU can be switched from a parameter number to a function group number.
+As parameters are grouped by function and displayed by the group, the related parameters can be set continually at a time.
+
+@ Changing a parameter identification number to a function group number
+
+Pr.MD setting Description
+0 The setting of parameter identification number remains the same as
+the last setting.
+1 The parameter number is used for the identification of parameters,
+and displayed in numerical order.
+2 The function group number is used for the identification of
+parameters, and displayed in alphanumeric order.
+
+Operating procedure
+
+1. Tuming ON the power of the inverter
+The operation panel is in the monitor mode.
+
+2. Selecting the parameter setting mode
+
+Press the MODE key to choose the parameter setting mode. (The parameter number read previously appears on
+the 12-segment LCD display.)
+
+3. Selecting a parameter
+Tum the setting dial or press the UP/DOWN key until "Pr. MD" (Group parameter setting) appears.
+Press the SET key to confirm the selection. "0" {initial value) will appear.
+
+4. Selecting the use of the function group number
+Turn the setting dial or press the UP/DOWN key to change the value to "2" (function group number). Press the SET
+key to confirm the Group parameter setting. "2" blinks after the setting is completed.
+
+@ Selecting a parameter by function group number to change its setting
+The following shows the procedure to change the setting of P.H400 (Pr.1) Maximum frequency.
+
+Operating procedure
+
+1. Turning ON the power of the inverter
+The operation panel is in the monitor mode.
+
+2. Changing the operation mode
+Press the PU/EXT key to choose the PU operation mode. [PU] indicator turns ON.
+
+3. Selecting the parameter setting mode
+Press the MODE key to choose the parameter setting mode. (The parameter group number read previously
+appears.)
+
+4. Enabling the function group selection
+Turn the setting dial or press the UP/DOWN key until "H4.." (Protective function parameter 4) appears. Press the
+
+SET key to confirm the selection. "H4—" will appear, which shows that the operation panel is ready for selection of
+a number in the group of monitor parameter 4.
+
+5. Selecting a parameter
+
+Tur the setting dial or press the UP/DOWN key until "H400" (P.H400 Maximum frequency) appears. Press the
+SET key to display the present set value. "120.0" (initial value) appears.
+
+7 8 3. Parameters
+3.3 Use of a function group number for the identification of parameters
+6. Changing the setting value
+Tum the setting dial or press the UP/DOWN key to change the value to "60.00". Press the SET key to confirm the
+setting. "60.00" blinks after the setting is completed.
+
+3. Parameters
+3.3 Use of a function group number for the identification of parameters
+3.4 Parameter list (by function group number)
+
+. E . Envi ron ment setti ng Pr. group Pr. Name thonge
+parameters E701 256 Inrush current Ilmit clrcult Ife 186
+Parameters for the inverter operating environment. display
+Control circuit capacitor life
+E702 257 . 186
+Pr. group Pr. Name oer display
+- pag E703 258 Malin circult capacitor life 186
+E000 168 Parameter for manufacturer setting. Do not display
+= - Main circuit capacitor life
+many 4169 Parameter for manufacturer setting. Do not E704 259 measuring 186
+_ Display estimated main circuit
+E020 1006 Clock (year) 158 E705 506 capacitor residual life 186
+E021 1007 Clock (month, day) 158 E706 507 Display ABC relay contact life | 186
+E022 1008 Clock (hour, minute) 158 E708 509 Display power cycle life 186
+E023 269 Parameter for manufacturer setting. Do not E709 198 Display corrosion level 186
+E080 468 Parameter for manufacturer setting. Do not Ero 503 Maintenance timer - 190
+set. E711 504. Maintenance timer warning 190
+Parameter for manufacturer setting. Do not output set time
+E081 169 set. E720 555 Current average time 191
+E100 Reset selection E721 556 Data output mask time 191
+E101 75 Disconnected PU detection 161 E722 557 Current average value monitor | , ,,
+E102 PU stop selection signal output reference current
+E103 145 PU display language selection | 164 . . .
+E104. /990 PU buzzer control 165  F: Settings for acceleration/
+E105 991 PU contrast adjustment 166 deceleration
+E107 7 R limi 161 . .
+u 5 ‘eset limit - 6 Parameters for the motor acceleration/deceleration
+F200 161 Frequency setting/key lock 167 a
+operation selection characteristics.
+Frequency change increment Refer
+EzoF 295 amount setting 169 Pr.group| Pr. Name COREE
+RUN key rotation direction Acceleratlon/deceleration
+e202 “ selection 70 oor 20 reference frequency 196
+Regenerative function Acceleration/deceleration time
+Esti 30 selection 442 Foor =| 24 increments 196
+E301 570 Multiple rating setting 171 Jog acceleration/deceleration
+E400 77 Parameter write selection 173 Foo2 16 time 232
+E410 296 Password lock level 175 403,
+E411 297 Password lock/unlock 175 Foo3 611 Acceleration time at a restart 408
+E415 4499 Parameter for manufacturer setting. Do not F010 7 Acceleration tlmeGimpie) 196
+: F011 8 Deceleration ti i 196
+E420. + ‘| 888 Free parameter 4 178 ecoleration time Simple)
+E421 3889 Free parameter 2 178 Fo20 | 44 Second acceleration! aoe
+PM parameter 196
+E430 998 initializationGimple 104 F021 45 Second deceleration time 306
+Automatic parameter Acceleratlon/deceleration time
+ES. 999 settingGimple) 179 [rakes 147 switching frequency 196
+User group read F040 1103 Deceleration time at 196
+E440 160 selectionGimple) 181 emergency stop
+Pr ; Acceleration time in low-speed
+User group registered display/ F070 791 196
+E441 172 batch clear 181 range —
+£442 173 User group registration 181 F074 792 Peceleration time in low-speed | |,
+EMS 174 User group clear 184 Accolerationkdeceleration
+E600 72 PWM frequency selection 184 F100 29 pattern selection 201
+E601 240 —_ operation selection | 184 F101 59 Remote function selection __| 203
+PWM frequency automatic
+EEDZ im) 260 switchover 184 Fioz2 (| 13 Starting frequency oon
+E700 255 Life alarm status display 186 F103 571 Holding time at a start 207
+
+80 3. Parameters
+3.4 Parameter list (by function group number)
+Refer Refer
+Pr. group Pr. Name to page Pr. group Pr. Name to page
+F500 292 Automatic acceleration/ 209, HO01 600 First free thermal reduction 238
+deceleration 370 frequency 1
+F510 61 Reference current 209 Hoo2 601 First free thermal reduction 238
+Reference value at ratlo 1
+F511 62 . 209 " 7
+acceleration First free thermal reduction
+H003 602 238
+Reference value at frequency 2
+oa: 63 deceleration 209 First free thermal reduction
+- HO004 603 238
+= 293 Acceleration/deceleration 209 ratlo 2
+separate selection First free thermal reduction
+HO005 604 238
+frequency 3
+r D: Parameters for the setting of HOO06 607 Motor permissible load level =
+operation command and Ho10 51 eta electronic thermal O/L 345,
+355
+fr n mman
+eque cy co a d HO11 692 Second free thermal reduction 238
+Parameters for setting the command source to the inverter, frequency 1
+and the motor driving frequency and torque. HO12 693 Second free thermal reduction | ,.,,
+ratio 1
+Refer 7
+Pr. group Pr. Name Second free thermal reduction
+to page H013 694 frequency 2 238
+Operation mode 212, Second free thermal reduction
+Pat 79 selectionGimpie) 222 H014 695 ratlo 2 238
+Communication startup mode Second free thermal reduction
+D001 340 selection 222 HO015 696 frequency 3 238
+D010 338 Communication operation 223 H016 608 Second motor permissible 238
+command source load level
+D011 339 Communication speed 223 H100 244 Cooling fan operation 245
+command source selection
+D012 550 NET mode operation command 223 H101 249 Earth (ground) fault detection 246
+source selection at start
+PU mode operation command Display safety fault code "7
+Boe 551 source selection 223 bik 986 [E800-SCE]
+D020 78 Reverse rotation prevention 231 H182 631 Inverter output fault detection 247
+selection enable/disable selection
+poz0 | 811 Set resolution switchover | 1 H200 | 251 Output phase loss protection | 54,
+268 selection
+D200 15 Jog frequency 232 H300 65 Retry selection 250
+Multi-speed setting (high Number of retries at fault
+H301 67 250
+PED 4 speed\GSimple) 234 occurrence
+Multi-speed setting (middle H302 68 Retry walting time 250
+D302 5 spoed\Simple 234 H303 69 Retry count display erase 250
+Multi-speed setting (low H400 Maximum frequencyGimpie) | 253
+Docs © speed\Simple) 234 H401 | 2 Minimum frequencyGimpie)_| 253
+D304 to Multi-speed setting (speed 4 to High speed maximum
+D307 24 to 27 speed 7) 234 H402 18 frequency 253
+D308 te | 232 to Multi-speed setting (speed 8 to 234. H415 873° Speed limit 130
+D315 239 speed 15) Pr
+H416 285 Speed deviation excess 130,
+D400 804 Torave command source 143 detection frequency 370
+Selection aaa H420 31 Frequency Jump 1A 254
+D401 805 Torque command value (RAM) 4 43 H421 32 Frequency Jump 1B 254
+p402 806 Torque command value (RAM, | 114, nazz 33 Frequency jump 2A 254
+EEPROM) 143 H423 34 Frequency jump 2B 254
+H424 35 Frequency jump 3A 254
+. . H425 36 Frequency jump 3B 254
+@ H: Protective function parameter 4291552 Frequency jump range 254
+Parameters to protect the motor and the inverter. Hs00 22 Stall prevention operation 114,
+level (Torque limit level) 256
+Refer i i
+Pr. grou Pr. Name Stall prevention operation
+group to page H501 156 selection 256
+A 238, i
+Electronic thermal O/L , Second stall prevention
+Hooo 8 ji 345, ria 48 operation level 256
+relayGimple) 355 P'
+
+3. Parameters
+
+3.4 Parameter list (by function group number)
+
+Refer Refer
+Pr. group Pr. Name to page Pr. group Pr. Name to page
+Stall prevention operation Operating time carrying-over
+H610 23 level compensation factor at | 256 mos 564 times 270
+double speed Frequency monitoring
+"3
+Stall prevention operation ene 55 reference 279
+H611 66 ducti tarting fre 256 >
+reduction starting trequency mo41 56° Current monitoring reference | 279
+Heso— «(| 277 Stall prevention operation 256 mo42__| 866 Torque monitoring reference | 270
+Voltage reduction selection M043 241 Anaiaa input display unit 318
+H631 154 during stall prevention 256 = -
+operation mo44 290 Monitor negative output 270,
+selection 279
+H103 997 Fault initiati 248
+au ination —_ M050. 11106 | Torque monitor filter 270
+H800 374 Overspeed detection level 266 - =
+Load characterlatl M051 1107 Running speed monitor filter | 270
+H520 1480 ad characteristics 261 Excitation current monitor
+measurement mode M052 1108 filter 270
+Load characteristics load
+H521 1481 261 i i ii
+reference 1 M100 52 Operaon panel main monitor 270
+H522 1482 Load characteristics load 261 0 ti i it
+reference 2 M101 774 9 pera fon pane! monitor 270
+Load characteristics load = -
+H523 1483 reference 3 261 M102 775 ore monitor 270
+H524 1484 Load characteristics load 261 0 ‘i i it
+reference 4 M103. | 776 eto 270
+Load characteristics load = 7 =
+H525 1485 reference 5 261 M104 992 Operation panel setting dial 270
+Load characteristics maximum push monitor selection [E800]
+H526 1486 frequency 261 M200 892 Load factor 286
+Par oa Energy saving monitor
+H527 | 1487 fequeny minimum | 964 N20 Tg 893 reference (motor capacity) | °°
+— = ; Control selection during
+U limit detecti
+H531 1488 wath imir warning clerection | 261 M202 894 commercial power-supply 286
+operation
+Lower limit warning detection
+H532 14! . 261
+53 89 width 6 M203 895 Power saving rate reference 286
+U limit fault detecti
+H533 j14g0 | Pa coneenon | 261 m204___|a96 Power unit cost 286
+Power saving monitor average
+H534 1494 oe IImit fault detection 264 M205 897 time 286
+Load status detection signal M206 898 Power saving cumulative 286
+H535 1492 delay time / load reference 261 monitor clear :
+measurement walting time M207 99 Operation time rate (estimated | 5...
+Hest | 690 Deceleration check time 130 value)
+M300 54 fe ot function selection 279
+@M: Item and output signal for var ig [AM terminal function selection |.
+monitoring [E800-4][E800-5]
+co i ibrati -
+Parameters for the settings regarding the monitoring to check M310 (900)? iT terminal calibration [E800 283
+the inverter's operating status and the output signals for the 320 C1 ‘AM terminal calibration [E600- 383
+monitoring. (901)2 — | 4][E800-5]
+AM output filter [E800-4][E800-
+Pr.group| Pr. Name Refer M321 867 5] 283
+to page - -
+mo00 37 Speed display 268 M390 1200 1800 4y1E800 5), calibration | 555
+M001 505 Speed setting reference 268 RUN terminal function
+M003 53 Frequency / rotation speed 268 M400 190 selection 292
+unit switchover ; ;
+mo20 170 Watt-hour meter clear 270 M404 191 FU terminal function selection | 292
+ABC terminal function
+mo21 563 Energization time carrying- 270 M405 192 selection 292
+over times M410 313°° DOO output selecti 292
+= , — output selection
+Mo22 268 Monitor decimal digits 270 = -
+selection M411 314 DO1 output selection 292
+M023 894 Cumulative power monitor 270, M412 315°5 DO2 output selection 292
+digit shifted times 286 M413 |316°° __ | DO3 output selection 292
+M030 171 Operation hour meter clear 270 : P
+M414 3175 DO4 output selection 292
+
+82 3. Parameters
+3.4 Parameter list (by function group number)
+
+Refer Refer
+Pr. group Pr. Name to page Pr. group Pr. Name to page
+M415 3185 DOS5 output selection 292 1203 c4 Terminal 2 frequency setting 318
+2 i"
+M416 319° DO6 output selection 292 (903) gain
+M420 320° RA‘ output selection 292 T400 cs * Terminal 4 frequency setting 318
+5 (904)? | bias frequency
+ry lecti
+M421 324 RA2 output selection 292 701 C6 Terminal 4 frequency setting 318
+M422 322°5 RA3 output selection 292 (904)"2 bias
+: . 114, 126 Terminal 4 fre ti
+M430 157 OL signal output timer . erminal quency setting
+256 Une (905)? =| gain frequency 318
+M431 289 Inverter output terminal filter | 292 C7 7 ‘
+Output current detection T403 ” Terminal 4 frequency setting | 1,
+M433 166 ‘ amen 304 (905) gain
+signal retention time C38 Terminal 4 bi d
+m44o_—+*| 870 Speed detection hysteresis | 301 T410 o |aomune @ bias comman 318
+re (932) (torque/magnetlc flux)
+M441 41 Up-to-frequency sensitivity 301 30 - - 7
+M442 | 42 Output frequency detection | 301 1411 .» | Terminal 4 bias (torqu 318
+; (932) magnetic flux)
+Output frequency detection for
+M443 43 reverse rotation 301 oR c40 Terminal 4 gain command 318
+“2 .
+M446_—(| 865 Low speed detection 301 (933)* _| (torque/magnetic flux)
+M451 193 NET Y1 output selection 292 T413 ca . Terminal 4 gain (torque/ 323
+M452 __| 194 NET Y2 output selection 292 (233)* _| magnetic flux)
+M453.«(| 195 NET Y3 output selection 292 T700 178 STE terminal function 328
+M454 196 NET Y4 output selection 292 STRIDI terminal functl
+M460 ‘| 150 Output current detection level | 304 701 179 selection rmina’ Tunction 328
+Output current detection
+M461 151 signal delay time 304 T702 180 RL terminal function selection | 328
+M462 152 Zero current detection level | 304 T703 181 RM terminal function selection | 328
+M463 153 Zero current detection time 304 7
+Output current detection 7704 182 RH terminal function selection | 328
+M464 167 put ; 304 , -
+operation selection T709 183 MRS terminal function 328
+M470 864 Torque detection 306 selection
+; ; ; ; T7411 184 res sorminal function 328
+@ T: Multi-function input terminal —_
+1720 17 MRS/X10 terminal input 332
+parameters selection
+Parameters for the setting of the input terminals via which 1740 699 Input terminal filter 328
+Fi . to the invert 1751 185 NET X1 input selection 328
+commanas are given to the inverter. 1752 186 NET X2 Input selection 328
+Pr. group Pr Name Refer T753 187 NET X3 input selection 328
+, . to page 1754 188 NET X4 input selection 328
+To00 73 Analog input selection 310 T755 189 NET X5 input selection 328
+T001 267 Terminal 4 input selection 310
+T002 74 Input filter time constant 316 , C: Motor constant parameters
+T003 822 Speed setting filter 1 316 P. ters for th lied A sti
+7004 826 Torque setting filter 4 316 arameters Tor the applied motor setting.
+TO05 832 Speed setting filter 2 316 Refer
+—— Pr. group Pr. Name
+T006 836 Torque setting filter 2 316 to page
+1007 849 Analog input offset adjustment | 316 340,
+Terminal 2 frequency setting c100 1 Applied motor 345,
+T022 125 : 318 355
+galn frequency(Simple) 97.345
+. | 114 c101 80 Motor capacity t ,
+Terminal 4 function , 355
+ue 858 assignment 256, 97, 345,
+gs 315 C102 81 Number of motor poles 355 ,
+Terminal 4 frequency settin
+To42 «| 426 a ameney Senin | 318 238,
+gain frequencyGimple) C103 9 Rated motor current(Simple) | 345,
+c2 i i
+T200 » Terminal 2 frequency setting 318 355
+(902) _| bias frequency cioa =| 83 Rated motor voltage 97, 345,
+C3 Terminal 2 frequency setting 355
+7201 *2 bi 318 97, 345,
+(302) las C105 84 Rated motor frequency 355
+125 Terminal 2 frequency setting :
+7202 (903)2 | gain frequency 318 C106 702 Maximum motor frequency 355
+C107 707 Motor inertia (integer) 355
+
+3. Parameters
+
+3.4 Parameter list (by function group number)
+
+84 3. Parameters
+3.4 Parameter list (by function group number)
+
+Refer Refer
+Pr. group Pr. Name to page Pr. group Pr. Name to page
+C108 724 Motor inertia (exponent) 355 345,
+345, C220 458 Second motor constant (R1) =| 355,
+110 96 Auto tuning setting/status 355, 410
+410 C221 459 Second motor constant (R2)} 345
+c111 95 Online auto tuning selection | 362 C222 460 Second motor constant (L1}/ | 345,
+arn 880 Load inertia rati 121, d-axis inductance (Ld) 355
+oad Inertia ratio 124 C223 461 Second motor constant (L2)/ | 345,
+345, q-axls Inductance (Lq) 355
+€120 90 Motor constant (R1) 355, C224 462 Second motor constant (X) 345
+410 Second motor excitation
+C121 1 Motor constant (R2) 345 CLE 455 current 45
+Motor constant (L1)/d-axis 345, Second motor torque current/ | 345,
+ie 92 Inductance (Ld) 355 (Eee 860 Rated PM motor current 355
+Motor constant (L2)/q-axis 345, Second motor induced voltage
+cis) inductance (Lq) 355 eo s0 ag) 736 constant (phi f) 355
+C124 94 Motor constant (X) 345 C231 739 Second motor Ld decay ratio | 355
+C125 82 Motor excitation current 345 C232 740 Second motor Lq decay ratio | 355
+C126 859 Torque current/Rated PM 345, 6233 746 Second motor protection 355
+motor current 355 current level
+C130 706 Induced voltage constant (phi 355 C235 1413 Second motor induced voltage 355
+f) constant (phi f) exponent
+C131 711 Motor Ld decay ratio 355 Second motor starting
+C132 712 Motor Lq decay ratio 355 C282 7™1 resistance tuning = 355
+C133 725 Motor protection current level | 355 compensation coernerene 1
+Motor Induced voltage C285 742 econd motor magnetic pole | 4.
+Cike 1412 constant (phi f) exponent 355 — as width i
+tarting resistance tuning
+C140 369°! Number of encoder pulses ae €288 737 compensation coefficient 2 355
+* 365,
+4 . att A . .
+c141 359 Encoder rotation direction 450 , A: Application parameters
+* Encoder signal loss detection | 368, ‘ i iat
+1 ’ Parameters for the setting of a specific application.
+Gike 376 enable/disable selection 450 9 P PP
+Lq tuning target current Refer
+GEL 1002 adjustment coefficient 355 Pr.group| Pr. Name to page
+182 717 Starting resistance tuning 355 A100 278 Brake opening frequency 370
+compensation coefficient 1 A101 279 Brake opening current 370
+Starting magnetic pole Brake opening current
+ie 721 position detection pulse width 355 ee 280 detection time 370
+Starting resistance tuning A103 281 Brake operation time at start | 370
+C188 720 i efficient 345
+compensation coetficien| A104 282 Brake operation frequency 370
+€200 450 Second applied motor 340 A105 283 Brake operation time at stop | 370
+. 345, = 7
+201 453 Second motor capacity 355 A108 284 Deceleration detection 370
+function selection
+C202 454 Number of second motor poles ae A107 285 Overspeed detection 370,
+55 frequency 450
+238, Brake opening current
+C203 51 Rated second motor current | 345, A108 639 selection 9 370
+355 Brake operation frequen
+345 A109 =| 640 Ope! quency | 370
+C204 456 Rated second motor voltage , selection
+355
+Automatic acceleration/ 209,
+345 A110 292 ,
+C205 457 Rated second motor frequency | 5." deceleration 370
+Stop-on-contact control
+i A200 270 i" 375
+C206 743 Second motor maximum 355 selection
+quency —_—____ Stop-on contact excitation
+C207 744 Second motor inertia (integer) | 355 A205 275 current low-speed scaling 375
+e208 | 745 (oponent) Inertla 355 factor _
+EE A206 276 PWM carrer frequency at stop- 375
+c21 4 Second motor auto tuning , on contac!
+0 63 setting/status ae A300 592 Traverse function selection _| 378
+S mot ji ; A301 593 Maximum amplitude amount =| 378
+econd motor online auto 7 7
+C211 574 tuning 362 A302 594 Amplitude compensation 378
+amount during deceleration
+
+Refer Refer
+Pr. group Pr. Name to page Pr. group Pr. Name to page
+A303 595 Amplitude compensation 378 A804 498 PLC function flash memory 416
+amount during acceleration clear
+A304 596 Amplitude acceleration time 378 A805 675 User parameter auto storage 416
+A305 597 Amplitude deceleration time | 378 function selectlon
+A600 759 PID unlit selection 393 A810 to |1150to | PLC function user parameters A16
+380 A859 1199 1 to 50
+A601 131 PID upper limit 396 A900 1020 Trace operation selection 418
+602 432 PDL limit 380, A902 1022 Sampling cycle 418
+‘ower limi 396 A903 1023 Number of analog channels | 418
+A603 553 PID deviation IImit 380 A904 1024 Sampling auto start 418
+A604 554 PID signal operation selection | 380 A905 1025 Trigger mode selection 418
+AG07 4015 Integral stop selection at 380 A908 1026 Number of sampling before 418
+limited frequency trigger
+AG10 128 PID action selection 380, A910 1027 Analog source selection (1ch) | 418
+396 A911 1028 Analog source selection (2ch) | 418
+AGI1 133 PID action set point 30 A912 1029 Analog source selection (3ch) | 418
+- A913 1030 Analog source selection (4ch) | 418
+Aei2 «| 127 oe control automatic 380 A914._‘| 1031 Analog source selection (Sch) | 418
+quency 380 A915 1032 Analog source selection (6ch) | 418
+A613 129 PID proportional band 396 A916 1033 Analog source selection (7ch) | 418
+380 A917 1034 Analog source selection (8ch) | 418
+AG14 130 PID integral time 396 A918 1035 Analog trigger channel 418
+380, Analog trigger operation
+AG15 134 PID differential time 306 A919 1036 selection 418
+noe 575 Output interruption detection | .,, A920 1037 Analog trigger level 418
+time A930 1038 Digital source selection (1ch) | 418
+A622 576 Output interruption detection 380 A931 1039 Digital source selection (2ch) | 418
+level A932 1040 Digital source selection (3ch) | 418
+AG23 577 putput interruption cancel 380 A933 1041 Digital source selection (4ch) | 418
+eve’ — A934 ‘| 1042 Digital source selection (Sch) | 418
+Ae24—| 609 PID Sot pointideviation input ae A935. [1043 _| Digital source selection (6ch) | 418
+PID measured value input 380 A936 1044 Digital source selection (7ch) | 418
+A625 610 selection 306° A937 1045 Digital source selection (8ch) | 418
+C42 A938 1046 Digltal trigger channel 418
+A630 * PID display blas coefficlent 393 igi i i
+(934)? py As39 [1047 —_—| Digital trigger operation 418
+C43
+A631 (93. 4)°2 PID display blas analog value | 393
+CAA @ B: Position control parameters
+A632 (935) 2 PID display gain coefficient 393 Parameters for the position control setting.
+C45
+A633 PID display gain analog value | 393 Refer
+(935)2 Pr. group Pr. Name to page
+Automatic restart after — 403, Boos =| 422 Position control gain 434
+A700 162 instantaneous power failure 408,
+selection 410
+Rotation direction detection @N: Communication operation
+A701 299 . . 403
+selection at restarting
+403 parameters
+A702 57 Restart coasting time , . oa .
+408 Parameters for the setting of communication operation such
+Aros _| 58 — —— time . 403 as the communication specifications or operating
+prevention operation a
+A710 165 level for restart 403 characteristics.
+A711 298 Frequency search gain ne Pr. group Pr. Name isi
+to page
+A712 560 Second frequency search gain | “> Nooo 549 Protocol selection “4
+410 Communication EEPROM
+A730 261 Power fallure stop selection | 414 NO01 342 write selection “4
+PLC function operation * Communication reset *
+GG 414 selection 416 NO10 349°6 selection ' 4
+A801 AAS aarieal operation lock mode 416 No13 502 Stop mode selection at 4
+setting communication error
+
+3. Parameters
+3.4 Parameter list (by function group number)
+86 3. Parameters
+3.4 Parameter list (by function group number)
+
+Refer Refer
+Pr. group Pr. Name to page Pr. group Pr. Name to page
+Operation frequency during 4 Link speed and duplex mode | .,
+Nore 779 communication error Non 1426 selection [E800-(SC)E]
+No20 17 PU communication station 4 N642 1455 Keepalive time [E800-(SC)E] "4
+number ; ;
+Ethernet signal loss detection
+NO21 118 PU communication speed “4 N643 1431 function selection [E800- *4
+No2z2 =| 419 PU communication data length | “4 (SC)E]
+ry = Ethernet communication
+P * *
+Nozs =| 419 ent ns stop bit | -4 Ne44.-|1432 =| check time Interval [E800- 4
+ny P (SC)E]
+PU communication parity "4 = 7 7
+NO24 120 check Ne47 1456 rEa00 oo selection | .4
+NO25 121 PU communication retry count | “4 Extended setting for Ethernet
+No26 =| 122 PU communication check time | «4 Ne4g. | 1457 _—| signal loss detection function | “4
+interval selection [E800-(SC)E]
+PU communication waiting * Inverter Identification enable/ | .,
+N027 123 ‘4 4
+time setting N649 | 1389 | disable selection [E800-(SC)E]
+PU communication CR/LF * Ethernet communication
+N028 124 . 4 *4
+selection N650°0 | 1424 | network number [E800-(SC)E]
+USB communication station _| . icati
+No40 547 number 4 N651 1425 Ethernet communication 4
+station number [E800-(SC)E]
+USB communication check *
+Noa 548 time interval ‘ N660 1442 TES00(SCE] *Ethemet) “
+Device instance number IP filter address 2 (Ethernet) | .,
+Nos2 =| 728 (Upper 3 digits) [E800- “4 N661 1443 [E800-(SC)E] ‘
+(SC)EPA] IP filter address 3 (Ethernet) |.
+(lower 4 digits) number 4 N662 1444 [E800-(SC)E] ‘
+NO053 729 Lower 4 digits) [E800- i.
+(SC)EPA] Nees | 1445 ES0O(SOE} 4(Ethemet) | -4
+NO54 390 abi Abana frequency | ., IP filter address 2 range
+[E800-(SC)EPA] N664 1448 specification (Ethernet) [E800- | “4
+No80 343 Communication error count | “4 (SC)E]
+N100 541 Frequency command sign “4 IP filter address 3 range .
+selection [E800-(SC)E] N665 1447 specification (Ethernet) [E800- | “4
+CC-Link extended setting “4 (SC)E]
+103 | 54 [E800-(SC)E] IP filter address 4 range
+IP address 1 (Ethernet) [E800- |. NG666 1448 specification (Ethernet) [E800- “4
+N600 1434 (SC)E] { Mr 4 (SC)E]
+IP address 2 (Ethernet) [E800- |. Ethernet command source
+N6O1 1435 (sc) ( ) 4 N670 | 1449 ~—| selection IP address 1 [E800- | *4
+SC)E]
+IP address 3 (Ethernet) [E800- |, (
+N602 1436 (SC)E] 4 Ethernet command source
+N671 1450 selection IP address 2 [E800- | “4
+N6eo3 41437 o on 4 (Ethernet) [E800- | ., (SC)E]
+Ethernet command source
+- "4 e
+NG10 _|1438__| Subnet mask 1 [£600-(SC)E] N672 |1451 _| selection IP address 3 [E800- | “4
+N611 1439 Subnet mask 2 [E800-(SC)E] “4 (SC)E]
+N612 1440 Subnet mask 3 [E800-(SC)E] | “4 Ethernet command source “
+Ne13. [1441 | Subnet mask 4[E800-(SC)E] | “4 G7 ig 1452 con IP address 4 [E600-
+N620 442 Default gateway address 1 “4 Ethernet command source
+[E800-(SC)E] N674 1453 selection IP address 3 range | “4
+Ne21 443 Default gateway address 2 “4 specification [E800-(SC)E]
+[E8004SC)E] Ethernet command source
+N622 444 Default gateway address 3 “4 N675 1454 selection IP address 4 range | “4
+[E800-{SC)E] specification [E800-(SC)E]
+Default gateway address 4 4 Station number In Inverter-to- | .,
+N623 | 445 [E800-(SC)E] N681 = 1124 | inverter link [E800-(SC)E]
+N630 1427 Ethernet function selection 1 | .4 Number of inverters in
+[E800-(SC)E] N682 1125 inverter-to-inverter linksystem | “4
+Ethernet function selection 2 | «4 [E800-(SC)E]
+N631 1428 (E800-(SC)E]
+Ethernet function selection 3 | «4
+N632 1429 [E800-(SC)E]
+Ethernet function selection 4 | «4
+N633 1430 [E800-(SC)E]
+
+@ (G) Control parameters Pr group| Pr Name =
+Parameters for motor control. G224.—«| 828 Model speed control gain 124
+Refer G230 840 Torque bias selection 126
+Pr. group Pr. Name
+to page G231 841 Torque bias 1 126
+G000 0 Torque boost(Gimple) 426 G232 842 Torque blas 2 126
+G001 3 Base frequencyGimple) 428 G233 843 Torque bias 3 126
+G002 19 Base frequency voltage 428 G234 844 Torque bias filter 126
+G003 14 Load pattern selection 430 G235 845 Torque blas operation time 126
+Goo. | 46 Second torque boost 426 G236_—s| a Torque bias balance 126
+compensation
+G011 47 Second V/F (base frequency) | 428 - =
+Energy saving control 6237 847 Fall-time torque bias terminal 4 126
+Gos0 | 60 ray 432 bias
+selection Fall-time torque blas terminal 4
+SF-PR sllp amount adjustment G238 848 gain q 126
+G060 673 operation selection [200/400 V | 433 7
+class] G240 3671 Speed feedback range 450
+, , 4 ‘
+Goe1 674 SF-PR slip amount adjustment | ,,., G241 368 Feedback gain 450
+gain [200/400 V class] Second motor control method
+DC injection brake operation este 451 selection v7
+G100 10 434
+frequency G311 830 Speed control P gain 2 121
+G101 "1 DC injection brake operation | 4.4 G312 831 Speed control Integral time 2__| 121
+time Torque control P gain 2
+G102 802 Pre-excitation selection 434 G313 834 (current loop proportional 149
+G103 850 Brake operation selection 434 gain)
+G106 250 Stop selection 440 6314 835 Torque control Integral tlme 2 449
+6107 70 Special regenerative brake 442 (current loop integral time)
+duty G315 833"! Speed detection filter 2 154
+G110 12 OC infection brake operation 434 G400 286 Droop gain 452
+vomage _ _ G401 287 Droop filter time constant 452
+G120 ‘(| 882 Regeneration avoidance 446 G40. —*| 653 Speed smoothing control 453
+operation selection Speed smoothing cutoff
+G121 883 aoa onion 446 G411 654 frequency 453
+Regeneration avoidance G932 89 Speed control gain (Advanced 102
+. ae magnetic flux vector)
+G123 885 compensation frequency limit | 446 3 dmot d aol
+value e942 569 econ motor speed contro! 102
+6124 B86 Regeneration avoidance 446 8
+voltage gain *1 The setting is available when a plug-in option for Vector
+Regeneration avoidance control is installed.
+G125 665 frequency gain 446 *2 On the LCD operation panel used as the command source,
+6200 300 Control method selection 97 the parameter number in parentheses appears instead of that
+- starting with the letter C.
+G203 245 Rated slip 449 *3 For the Ethernet model and the safety communication model,
+6204. 246 Slip compensation time 449 the setting is available only when the FR-A8AY is installed.
+constant *4 For details, refer to the Instruction Manual (Communication).
+Constant output range slip *5 Available when the PLC function is enabled. (Pr.313 to
+G205 247 compensation selection 449 Pr.315 are always available for settings in the Ethernet model
+Constant output range torque | 114, and the safety communication model.)
+G210 803 characteristic selection 143 *6 For the standard model, the setting is available only when a
+7 communication option is installed.
+G2ii__| 820 Speed control P gain 1_ 121 *7 For details, refer to the FR-E800-SCE Instruction Manual
+G212 821 Speed control integral time 1 | 121 (Functional Safety).
+Torque control P gain 1
+G213 824 (current loop proportional 149
+gain)
+G214 825 Torque control integral time 1 149
+(current loop Integral time)
+G215 823"! Speed detection filter 1 154
+G217 854 Excitation ratio 155
+Speed feed forward control/
+G220 877 model adaptive speed control | 124
+selection
+G221 878 Speed feed forward filter 124
+G222 879 Speed feed forward torque 124
+Imit
+G223 881 Speed feed forward gain 124
+
+3. Parameters
+3.4 Parameter list (by function group number)
